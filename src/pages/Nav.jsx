@@ -35,7 +35,7 @@ function Nav() {
           <img src="https://www.svgrepo.com/show/512533/naruto-119.svg" className="h-8" alt="Flowbite Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">P4ntomath</span>
         </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
             className="resume-button"
@@ -55,7 +55,7 @@ function Nav() {
             </svg>
           </button>
         </div>
-        <div className={`${isOpen ? "block" : "hidden"} items-center justify-between w-full md:flex md:w-auto md:order-1`} id="navbar-sticky">
+        <div className={`${isOpen ? "block" : "hidden"} items-center justify-between w-full lg:flex lg:w-auto lg:order-1`} id="navbar-sticky">
           <ul className="ul-list">
             <li>
               <a
