@@ -32,7 +32,7 @@ function Nav() {
     <nav className="main-nav">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://www.svgrepo.com/show/512533/naruto-119.svg" className="h-8" alt="Flowbite Logo" />
+          <img src="src\assets\hunter-logo.png" className="h-10" alt="Flowbite Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">P4ntomath</span>
         </a>
         <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
