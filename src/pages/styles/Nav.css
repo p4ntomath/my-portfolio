@@ -11,7 +11,7 @@
     @apply bg-[var(--primary)] fixed w-full z-20 top-0 start-0 border-b border-gray-600
 }
 .resume-button{
-    @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)]  font-medium rounded-lg text-sm px-4 py-2 text-center
+    @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)] font-medium rounded-lg text-sm px-1 h-9 text-center
 }
 .menu-button{
     @apply inline-flex items-center

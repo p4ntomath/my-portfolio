@@ -1,24 +1,9 @@
-/* Perspective for the 3D effect */
-.perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  /* Enable 3D transformations */
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  
-  /* Rotate around the Y-axis */
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  
-  /* Hide the backface of the card */
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  
-  /* Smooth transition for the flip */
-  .transition-transform {
-    transition: transform 0.6s ease-in-out;
-  }
+@import "tailwindcss";
+
+.card { perspective: 800px;}
+.card__content {transform-style: preserve-3d;}
+.card:hover .card__content {transform: rotateY(.5turn);}
+
+.card__front,
+.card__back { backface-visibility: hidden;}
+.card__back{ transform: rotateY(.5turn);}
