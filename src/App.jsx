@@ -6,7 +6,7 @@ function App() {
     <>
       <Nav />
       <main className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
-        <section id="home" className="h-screen flex items-center justify-center bg-gray-100 snap-start">
+        <section id="home" className="h-screen flex items-center justify-center bg-[var(--fourth)] snap-start">
          <Landing/>
         </section>
 

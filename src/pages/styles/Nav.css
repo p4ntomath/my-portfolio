@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 :root {
-    --primary: #0D1B2A;
-    --secondary: #415A77;
-    --tertiary: #778DA9;
-    --fourth : #E0E1DD
-  }
+  --primary: #000000; /* Black (Main background) */
+  --secondary: #D12F3D; /* Red (Iconic "X") */
+  --tertiary: #3B2F2F; /* Light Blue (Text background) */
+  --fourth: #A8D0E6; /* Dark Brown (Accent stripe) */
+}
 
 .main-nav{
     @apply bg-[var(--primary)] fixed w-full z-20 top-0 start-0 border-b border-gray-600
 }
 .resume-button{
-    @apply text-white bg-[var(--secondary)] hover:bg-gray-600 focus:ring-2 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 text-center
+    @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)] font-medium rounded-lg text-sm px-1 h-9 text-center
 }
 .menu-button{
     @apply inline-flex items-center
     p-2 w-10 h-10 justify-center
     text-sm text-gray-500 rounded-lg
-    md:hidden hover:bg-gray-800 focus:outline-none
-    focus:ring-2 focus:ring-gray-200
+    lg:hidden hover:bg-gray-800 focus:outline-none
+    ml-2
 }
 
 .ul-list{
     @apply flex flex-col p-4 md:p-0 mt-4 font-medium
     border border-[var(--tertiary)] rounded-lg
-    bg-[var(--secondary)] md:space-x-8 rtl:space-x-reverse
-    md:flex-row md:mt-0 md:border-0 md:bg-[var(--primary)]
+    bg-[var(--secondary)] lg:space-x-8 rtl:space-x-reverse
+    lg:flex-row lg:mt-0 lg:border-0 lg:bg-[var(--primary)]
 }
 
 .nav-link {
@@ -33,9 +33,9 @@
   }
   
   .nav-link:hover, .nav-link:focus {
-    @apply text-[var(--primary)]  md:text-[var(--secondary)];
+    @apply text-[var(--primary)]  lg:text-[var(--secondary)];
   }
-  
+
 .selected{
     @apply bg-[var(--tertiary)];
 }

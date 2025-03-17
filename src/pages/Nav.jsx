@@ -32,16 +32,16 @@ function Nav() {
     <nav className="main-nav">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://www.svgrepo.com/show/512533/naruto-119.svg" className="h-8" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">P4ntomath</span>
+          <img src="src\assets\hunter-logo.png" className="h-10" alt="Flowbite Logo" />
+          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">P4ntomath</span>
         </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
+        <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
+          {screen.availWidth > 400?           <button
             type="button"
             className="resume-button"
           >
             My Resume
-          </button>
+          </button>:null}
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
@@ -55,7 +55,7 @@ function Nav() {
             </svg>
           </button>
         </div>
-        <div className={`${isOpen ? "block" : "hidden"} items-center justify-between w-full md:flex md:w-auto md:order-1`} id="navbar-sticky">
+        <div className={`${isOpen ? "block" : "hidden"} items-center justify-between w-full lg:flex lg:w-auto lg:order-1`} id="navbar-sticky">
           <ul className="ul-list">
             <li>
               <a
