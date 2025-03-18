@@ -34,10 +34,10 @@ export default function HunterLicenseCard() {
             {/* BACK SIDE */}
             <div className="card__back absolute top-0 bottom-0 right-0 left-0 w-full h-full bg-blue-300 border-1 border-black rounded-xl flex flex-col items-center justify-center transform rotate-y-180 backface-hidden p-4">
               <div className="w-full h-10 bg-black text-white flex items-center justify-center rounded-lg mb-4">
-                <h1 className="font-bold text-sm">Mahlatse Rabothata</h1>
+                <h1 className="font-bold text-sm font-sans">Mahlatse Rabothata</h1>
               </div>
               <div className="w-full h-32 bg-[var(--primary)] rounded-md flex items-center justify-center text-white">
-                <p className="text-center text-xs px-1 text-balck">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and coding</p>
+                <p className="text-center text-xs px-1 text-balck font-sans">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and coding</p>
               </div>
               <div className="w-full h-8 bg-black rounded-md mt-4 flex items-center justify-center text-white text-xs">
                 <p>ID: 123456789</p>
