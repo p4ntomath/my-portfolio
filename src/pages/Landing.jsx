@@ -1,12 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./styles/landing.css";
 import HunterLicenseCard from "./components/HunterLicenseCard";
 
 function Landing() {
   const [positions, setPositions] = useState([]);
+  const [isVisible, setIsVisible] = useState(true);
+  const landingRef = useRef(null);
+
+  // Detect when Landing component is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when at least 10% of the component is visible
+    );
+
+    if (landingRef.current) {
+      observer.observe(landingRef.current);
+    }
+
+    return () => {
+      if (landingRef.current) {
+        observer.unobserve(landingRef.current);
+      }
+    };
+  }, []);
 
   // Generate random positions within the right 1/3 of the screen
   useEffect(() => {
+    if (!isVisible) return; // Stop updating positions when off-screen
+
     const generatePositions = () => {
       const newPositions = [];
       for (let i = 0; i < 3; i++) {
@@ -19,11 +43,12 @@ function Landing() {
 
     generatePositions();
     const interval = setInterval(generatePositions, 5000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <div className="flex items-center justify-center relative min-h-screen">
+    <div ref={landingRef} className="flex items-center justify-center relative min-h-screen">
       {/* Left Side Content */}
       <div className="hidden md:block m-8 w-1/3">
         <h2 className="text-2xl font-bold">Welcome To My Portfolio</h2>
@@ -36,9 +61,10 @@ function Landing() {
       <div className="relative">
         <HunterLicenseCard />
       </div>
+
       {/* Floating Icons Container */}
-      <div className="w-1/3 hidden md:block  overflow-hidden">
-        <div className=" inset-0">
+      <div className="w-1/3 hidden md:block overflow-hidden">
+        <div className="inset-0">
           <a
             href="https://github.com/p4ntomath"
             target="_blank"
