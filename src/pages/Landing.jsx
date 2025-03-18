@@ -33,52 +33,53 @@ function Landing() {
       </div>
 
       {/* Hunter License Card */}
-      <HunterLicenseCard />
-
-      {/* Floating Icons on the right end */}
-      <div className="w-1/3 hidden md:block">
-      <div className="absolute inset-0">
-        <a
-          href="https://github.com/p4ntomath"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            position: "absolute",
-            left: `${positions[0]?.x || 70}%`,
-            top: `${positions[0]?.y || 50}%`,
-            transition: "left 5s, top 5s",
-          }}
-          className="w-8 h-8 hover:opacity-75"
-        >
-          <img src="src/assets/github-icon.png" alt="GitHub" className="w-full h-full" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/mahlatse-rabothata-14641a287/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            position: "absolute",
-            left: `${positions[1]?.x || 75}%`,
-            top: `${positions[1]?.y || 55}%`,
-            transition: "left 5s, top 5s",
-          }}
-          className="w-8 h-8 hover:opacity-75"
-        >
-          <img src="src/assets/linkedin-icon.png" alt="LinkedIn" className="w-full h-full" />
-        </a>
-        <a
-          href="mailto:morwawarabothata5@gmail.com"
-          style={{
-            position: "absolute",
-            left: `${positions[2]?.x || 80}%`,
-            top: `${positions[2]?.y || 60}%`,
-            transition: "left 5s, top 5s",
-          }}
-          className="w-8 h-8 hover:opacity-75"
-        >
-          <img src="src/assets/email-icon.jpg" alt="Email" className="w-full h-full" />
-        </a>
+      <div className="relative">
+        <HunterLicenseCard />
       </div>
+      {/* Floating Icons Container */}
+      <div className="w-1/3 hidden md:block  overflow-hidden">
+        <div className=" inset-0">
+          <a
+            href="https://github.com/p4ntomath"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              position: "absolute",
+              left: `${positions[0]?.x || 70}%`,
+              top: `${positions[0]?.y || 50}%`,
+              transition: "left 5s, top 5s",
+            }}
+            className="w-8 h-8 hover:opacity-75"
+          >
+            <img src="src/assets/github-icon.png" alt="GitHub" className="w-full h-full" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mahlatse-rabothata-14641a287/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              position: "absolute",
+              left: `${positions[1]?.x || 75}%`,
+              top: `${positions[1]?.y || 55}%`,
+              transition: "left 5s, top 5s",
+            }}
+            className="w-8 h-8 hover:opacity-75"
+          >
+            <img src="src/assets/linkedin-icon.png" alt="LinkedIn" className="w-full h-full" />
+          </a>
+          <a
+            href="mailto:morwawarabothata5@gmail.com"
+            style={{
+              position: "absolute",
+              left: `${positions[2]?.x || 80}%`,
+              top: `${positions[2]?.y || 60}%`,
+              transition: "left 5s, top 5s",
+            }}
+            className="w-8 h-8 hover:opacity-75"
+          >
+            <img src="src/assets/email-icon.jpg" alt="Email" className="w-full h-full" />
+          </a>
+        </div>
       </div>
     </div>
   );
