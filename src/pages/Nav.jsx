@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"; // Added useEffect import
 import './styles/Nav.css'
+import myLogo from '../assets/logo.png'
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ function Nav() {
     <nav className="main-nav">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="src\assets\logo.png" className="h-5" alt="Flowbite Logo" />
+          <img src={myLogo} className="h-5" alt="Personal Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">P4ntomath</span>
         </a>
         <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse">
