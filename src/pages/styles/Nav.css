@@ -2,16 +2,16 @@
 
 :root {
   --primary: #000000; /* Black (Main background) */
-  --secondary: #D12F3D; /* Red (Iconic "X") */
-  --tertiary: #3B2F2F; /* Light Blue (Text background) */
-  --fourth: #A8D0E6; /* Dark Brown (Accent stripe) */
+  --secondary: #B8244B; /* Orange */
+  --tertiary: #3B2F2F; /* Dark Brown (Accent stripe) */
+  --fourth: #A8D0E6; /* Light Blue (Text background) */
 }
 
 .main-nav{
     @apply bg-[var(--primary)] fixed w-full z-20 top-0 start-0 border-b border-gray-600
 }
 .resume-button{
-    @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)] font-medium rounded-lg text-sm px-1 h-9 text-center
+    @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)] font-medium rounded-lg text-sm px-2 h-9 text-center
 }
 .menu-button{
     @apply inline-flex items-center
@@ -29,14 +29,14 @@
 }
 
 .nav-link {
-    @apply block py-2.5 px-4 text-white no-underline rounded-md;
+    @apply block py-1.5 px-5 text-white no-underline rounded-md;
   }
   
   .nav-link:hover, .nav-link:focus {
-    @apply text-[var(--primary)]  lg:text-[var(--secondary)];
+    @apply text-[var(--fourth)]  lg:text-[var(--secondary)];
   }
 
 .selected{
-    @apply bg-[var(--tertiary)];
+    @apply bg-[var(--tertiary)] m-2 lg:m-0;
 }
 
