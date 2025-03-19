@@ -1,4 +1,5 @@
 import "../styles/Hcard.css"
+import hunterLogo from "../../assets/hunter-logo.png";
 
 export default function HunterLicenseCard() {
     return (
@@ -9,7 +10,7 @@ export default function HunterLicenseCard() {
             <div className="card__front absolute top-0 bottom-0 right-0 left-0 w-full h-full bg-white border-1 border-black rounded-xl backface-hidden p-2">
               <div className="h-2/3 bg-black flex flex-col items-center justify-center rounded-t-xl p-4">
               <div className="h-32 w-full m-4 bg-white flex items-center justify-center overflow-hidden">
-                <img src="src/assets/hunter-logo.png" alt="Hunter Sign" className="h-full w-full object-contain"/>
+                <img src={hunterLogo} alt="Hunter Sign" className="h-full w-full object-contain"/>
               </div>
                 <div className="bg-white flex items-center justify-center rounded-sm">
                   <img src="src/assets/barcode.png" alt="Barcode" />

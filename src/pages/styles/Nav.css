@@ -8,7 +8,7 @@
 }
 
 .main-nav{
-    @apply bg-[var(--primary)] fixed w-full z-20 top-0 start-0 border-b border-gray-600
+    @apply  fixed w-full z-20 top-0 start-0  border-gray-600
 }
 .resume-button{
     @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)] font-medium rounded-lg text-sm px-2 h-9 text-center
@@ -25,18 +25,20 @@
     @apply flex flex-col p-4 md:p-0 mt-4 font-medium
     border border-[var(--tertiary)] rounded-lg
     bg-[var(--secondary)] lg:space-x-8 rtl:space-x-reverse
-    lg:flex-row lg:mt-0 lg:border-0 lg:bg-[var(--primary)]
+    lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent
 }
 
 .nav-link {
     @apply block py-1.5 px-5 text-white no-underline rounded-md;
   }
   
-  .nav-link:hover, .nav-link:focus {
-    @apply text-[var(--fourth)]  lg:text-[var(--secondary)];
+  .nav-link:hover, .nav-link:focus  {
+    @apply text-[var(--fourth)]  lg:text-[var(--tertiary)];
   }
-
+.nav-link:active{
+    @apply bg-[var(--tertiary)] text-[var(--fourth)];
+}
 .selected{
-    @apply bg-[var(--tertiary)] m-2 lg:m-0;
+    @apply bg-[var(--primary)] m-2 lg:m-0 lg:px-7 ;
 }
 

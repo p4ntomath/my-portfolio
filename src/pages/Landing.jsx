@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import "./styles/landing.css";
 import HunterLicenseCard from "./components/HunterLicenseCard";
+import githubIcon from "../assets/github-icon.png";
+import linkedinIcon from "../assets/linkedin-icon.png";
+import emailIcon from "../assets/email-icon.jpg";
+
 
 function Landing() {
   const [positions, setPositions] = useState([]);
@@ -77,7 +81,7 @@ function Landing() {
             }}
             className="w-8 h-8 hover:opacity-75"
           >
-            <img src="src/assets/github-icon.png" alt="GitHub" className="w-full h-full" />
+            <img src={githubIcon} alt="GitHub" className="w-full h-full" />
           </a>
           <a
             href="https://www.linkedin.com/in/mahlatse-rabothata-14641a287/"
@@ -91,7 +95,7 @@ function Landing() {
             }}
             className="w-8 h-8 hover:opacity-75"
           >
-            <img src="src/assets/linkedin-icon.png" alt="LinkedIn" className="w-full h-full" />
+            <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
           </a>
           <a
             href="mailto:morwawarabothata5@gmail.com"
@@ -103,7 +107,7 @@ function Landing() {
             }}
             className="w-8 h-8 hover:opacity-75"
           >
-            <img src="src/assets/email-icon.jpg" alt="Email" className="w-full h-full" />
+            <img src={emailIcon} alt="Email" className="w-full h-full" />
           </a>
         </div>
       </div>
