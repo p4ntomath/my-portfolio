@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
+
+.para-text{
+	font-family: "Gidole", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
 .book {
-	width: 350px;
-	height: 450px;
-	position: relative;
-	transition-duration: 1s;
-	perspective: 1500;
+  width: 350px;
+  height: 450px;
+  position: relative;
+  transition-duration: 1s;
+  perspective: 1500px; /* Add perspective to the book container */
+  transform-style: preserve-3d; /* Ensure 3D transformations are preserved */
 }
 input {
 	display: none;
