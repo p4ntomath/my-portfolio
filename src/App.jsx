@@ -1,5 +1,6 @@
 import Nav from './pages/Nav';
 import Landing from './pages/Landing'
+import About from './pages/About';
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
          <Landing/>
         </section>
 
-        <section id="about" className="h-screen flex items-center justify-center bg-gray-200 snap-start">
-          <h1 className="text-4xl font-bold">About Me</h1>
+        <section id="about" className="h-screen flex items-center justify-center bg-[var(--fourth)] snap-start">
+          <About/>
         </section>
 
         <section id="projects" className="h-screen flex items-center justify-center bg-gray-300 snap-start">
