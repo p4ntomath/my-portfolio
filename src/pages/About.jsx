@@ -1,10 +1,9 @@
 import React from "react";
-import Book from "./components/Book"
 
 function About() {
   return (
     <div className="flex items-center justify-center">
-      <Book/>
+      <h1 className="text-6xl font-bold">About Me</h1>
     </div>
   );
 }
