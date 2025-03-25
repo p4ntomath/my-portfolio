@@ -17,8 +17,8 @@
     @apply inline-flex items-center
     p-2 w-10 h-10 justify-center
     text-sm text-gray-500 rounded-lg
-    lg:hidden hover:bg-gray-800 focus:outline-none
-    ml-2
+    lg:hidden hover:bg-[var(--primary)] focus:outline-none
+    mx-2
 }
 
 .ul-list{
@@ -33,12 +33,11 @@
   }
   
   .nav-link:hover, .nav-link:focus  {
-    @apply text-[var(--fourth)]  lg:text-[var(--tertiary)];
+    @apply text-red-950
   }
-.nav-link:active{
-    @apply bg-[var(--tertiary)] text-[var(--fourth)];
+
+.selected {
+    @apply bg-[var(--primary)] lg:text-black lg:bg-transparent my-1 md:mx-2 md:px-3 lg:m-0 lg:px-7 hover:text-white;
 }
-.selected{
-    @apply bg-[var(--primary)] m-2 lg:m-0 lg:px-7 ;
-}
+
 
