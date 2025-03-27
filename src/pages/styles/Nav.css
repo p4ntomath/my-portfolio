@@ -1,12 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --primary: #000000; /* Black (Main background) */
-  --secondary: #B8244B; /* Orange */
-  --tertiary: #3B2F2F; /* Dark Brown (Accent stripe) */
-  --fourth: #A8D0E6; /* Light Blue (Text background) */
-}
-
 .main-nav{
     @apply  fixed w-full z-20 top-0 start-0  border-gray-600
 }
