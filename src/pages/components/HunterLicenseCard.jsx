@@ -39,7 +39,7 @@ export default function HunterLicenseCard() {
                 <h1 className="font-bold text-sm desc-p">Mahlatse Rabothata</h1>
               </div>
               <div className="w-full h-32 bg-gray-900 rounded-md flex items-center justify-center text-white">
-                <p className="text-center text-xs px-1 text-balck desc-p">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and coding</p>
+                <p className="text-center text-xs px-1 text-balck desc-p">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and mathematics</p>
               </div>
               <div className="w-full h-8 bg-gray-900 rounded-md mt-4 flex items-center justify-center text-white text-xs">
                 <p className="desc-p">ID: 123456789</p>

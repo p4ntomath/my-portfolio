@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function PhoneButtons() {
+export function PhoneButtons({onButtonClick }) {
   const buttons = [
     { label: "1" },
     { label: "2" },
@@ -69,22 +69,38 @@ export function PhoneButtons() {
           {/* Top Button */}
           <button
             className="absolute top-[-2px] w-7 h-4 flex items-center justify-center rounded-full active:shadow-none active:translate-y-1"
-            onClick={() => handlePress("up")}
+            onClick={() => {
+              handlePress("up")
+              onButtonClick("up");
+            }
+            }
           ></button>
           {/* Bottom Button */}
           <button
             className="absolute bottom-[-2px] w-7 h-4 flex items-center justify-center rounded-full active:shadow-none active:translate-y-1"
-            onClick={() => handlePress("down")}
+            onClick={() => {
+              handlePress("down")
+              onButtonClick("down");
+            }
+            }
           ></button>
           {/* Left Button */}
           <button
             className="absolute left-[-2px] w-4 h-7 flex items-center justify-center rounded-full active:shadow-none active:translate-y-1"
-            onClick={() => handlePress("left")}
+            onClick={() => 
+              {
+                handlePress("left")
+                onButtonClick("left");
+              }}
           ></button>
           {/* Right Button */}
           <button
             className="absolute right-[-2px] w-4 h-7 flex items-center justify-center rounded-full active:shadow-none active:translate-y-1"
-            onClick={() => handlePress("right")}
+            onClick={() => 
+              {
+                handlePress("right")
+                onButtonClick("right");
+              }}
           ></button>
           {/* Center OK Button */}
           <button className="w-5 h-5 flex items-center justify-center rounded-full active:shadow-none active:translate-y-1">
