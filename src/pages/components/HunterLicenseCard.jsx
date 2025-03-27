@@ -22,27 +22,27 @@ export default function HunterLicenseCard() {
                   <h1 className="text-sm">ラッキー Rabothata</h1>
                 </div>
                 <div className="w-full bg-amber-50">
-                  <p className="text-xs px-1.5">Software Developer</p>
+                  <p className="text-xs px-1.5">Software Engineer</p>
+                </div>
+                <div className="w-full bg-amber-50">
+                  <p className="text-xs px-1.5">Software Designer</p>
                 </div>
                 <div className="w-full bg-amber-50">
                   <p className="text-xs px-1.5">Computational Scientist</p>
-                </div>
-                <div className="w-full bg-amber-50">
-                  <p className="text-xs px-1.5">Designer</p>
                 </div>
               </div>
             </div>
   
             {/* BACK SIDE */}
             <div className="card__back absolute top-0 bottom-0 right-0 left-0 w-full h-full bg-blue-300 border-1 border-black rounded-xl flex flex-col items-center justify-center transform rotate-y-180 backface-hidden p-4">
-              <div className="w-full h-10 bg-black text-white flex items-center justify-center rounded-lg mb-4">
-                <h1 className="font-bold text-sm font-sans">Mahlatse Rabothata</h1>
+              <div className="w-full h-10 bg-gray-900 text-white flex items-center justify-center rounded-lg mb-4">
+                <h1 className="font-bold text-sm desc-p">Mahlatse Rabothata</h1>
               </div>
-              <div className="w-full h-32 bg-[var(--primary)] rounded-md flex items-center justify-center text-white">
-                <p className="text-center text-xs px-1 text-balck font-sans">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and coding</p>
+              <div className="w-full h-32 bg-gray-900 rounded-md flex items-center justify-center text-white">
+                <p className="text-center text-xs px-1 text-balck desc-p">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and coding</p>
               </div>
-              <div className="w-full h-8 bg-black rounded-md mt-4 flex items-center justify-center text-white text-xs">
-                <p>ID: 123456789</p>
+              <div className="w-full h-8 bg-gray-900 rounded-md mt-4 flex items-center justify-center text-white text-xs">
+                <p className="desc-p">ID: 123456789</p>
               </div>
             </div>
           </div>

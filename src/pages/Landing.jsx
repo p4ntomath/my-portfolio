@@ -4,6 +4,8 @@ import HunterLicenseCard from "./components/HunterLicenseCard";
 import githubIcon from "../assets/github-icon.png";
 import linkedinIcon from "../assets/linkedin-icon.png";
 import emailIcon from "../assets/email-icon.jpg";
+import whatsappIcon from "../assets/whatsapp-icon.png";
+import phoneIcon from "../assets/phone-icon.png";
 
 
 function Landing() {
@@ -37,7 +39,7 @@ function Landing() {
 
     const generatePositions = () => {
       const newPositions = [];
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 5; i++) {
         const x = 70 + Math.random() * 20;
         const y = 20 + Math.random() * 60;
         newPositions.push({ x, y });
@@ -55,7 +57,7 @@ function Landing() {
     <div ref={landingRef} className="flex items-center justify-center relative min-h-screen">
       {/* Left Side Content */}
       <div className="hidden md:block m-8 w-1/3">
-        <h2 className="text-2xl font-bold">Welcome To My Portfolio</h2>
+        <h2 className="text-2xl font-bold">Welcome To Mahlatse's Portfolio</h2>
         <p className="mt-2 text-xs text-gray-600">
           Explore my work, skills, and projects that highlight my passion for technology and design. Feel free to browse and discover how I can help bring your ideas to life!
         </p>
@@ -108,6 +110,30 @@ function Landing() {
             className="w-8 h-8 hover:opacity-75"
           >
             <img src={emailIcon} alt="Email" className="w-full h-full" />
+          </a>
+          <a
+            href="https://wa.me/0630311427"
+            style={{
+              position: "absolute",
+              left: `${positions[3]?.x || 80}%`,
+              top: `${positions[3]?.y || 60}%`,
+              transition: "left 5s, top 5s",
+            }}
+            className="w-8 h-8 hover:opacity-75"
+          >
+            <img src={whatsappIcon} alt="Email" className="w-full h-full" />
+          </a>
+          <a
+            href="tel:+27630311427"
+            style={{
+              position: "absolute",
+              left: `${positions[4]?.x || 80}%`,
+              top: `${positions[4]?.y || 60}%`,
+              transition: "left 5s, top 5s",
+            }}
+            className="w-8 h-8 hover:opacity-75"
+          >
+            <img src={phoneIcon} alt="Email" className="w-full h-full" />
           </a>
         </div>
       </div>

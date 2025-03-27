@@ -1,11 +1,12 @@
+import React from "react";
+import { Phone } from  "./components/Phone.jsx"
+
 function About() {
-    return (
-      <div>
-        <h1>About Me</h1>
-        <p>This is the About page.</p>
-      </div>
-    );
-  }
-  
-  export default About;
-  
+  return (
+    <div className="w-full h-screen flex items-center justify-center">
+      <Phone />
+    </div>
+  );
+}
+
+export default About;
