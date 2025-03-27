@@ -1,0 +1,11 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #000000; /* Black (Main background) */
+  --secondary: #B8244B; /* Orange */
+  --tertiary: #3B2F2F; /* Dark Brown (Accent stripe) */
+  --fourth: #A8D0E6; /* Light Blue (Text background) */
+}
