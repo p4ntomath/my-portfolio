@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
-.main-nav{
-    @apply  fixed w-full z-20 top-0 start-0  border-gray-600
-}
-.resume-button{
-    @apply text-white bg-[var(--secondary)] hover:bg-[var(--tertiary)] font-medium rounded-lg text-sm px-2 h-9 text-center
-}
-.menu-button{
-    @apply inline-flex items-center
-    p-2 w-10 h-10 justify-center
-    text-sm text-gray-500 rounded-lg
-    lg:hidden hover:bg-[var(--primary)] focus:outline-none
-    mx-2
+/* Custom backdrop blur and glass effect */
+.glass-nav {
+  @apply backdrop-blur-sm
 }
 
-.ul-list{
-    @apply flex flex-col p-4 md:p-0 mt-4 font-medium
-    border border-[var(--tertiary)] rounded-lg
-    bg-[var(--secondary)] lg:space-x-8 rtl:space-x-reverse
-    lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent
+/* Gradient text effect for brand */
+.brand-gradient {
+  @apply bg-[linear-gradient(90deg,var(--secondary),var(--tertiary))] bg-clip-text text-transparent
 }
 
-.nav-link {
-    @apply block py-1.5 px-5 text-white no-underline rounded-md;
-  }
-  
-  .nav-link:hover, .nav-link:focus  {
-    @apply text-red-950
-  }
+/* Smooth underline animation */
+.nav-underline {
+  position: relative;
+}
 
-.selected {
-    @apply bg-[var(--primary)] lg:text-black lg:bg-transparent my-1 md:mx-2 md:px-3 lg:m-0 lg:px-7 hover:text-white;
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 
