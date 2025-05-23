@@ -76,11 +76,11 @@ function Landing() {
   }, [isVisible]);
 
   return (
-    <div ref={landingRef} className="min-h-screen w-full flex flex-col justify-center items-center px-4 py-8 lg:py-0 overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
+    <div ref={landingRef} className="min-h-[100dvh] w-full flex items-center justify-center py-16 md:py-0 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-4">
         {/* Content Section */}
         <div className="w-full lg:w-1/3 text-center lg:text-left order-2 lg:order-1">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent">
             Welcome To My Portfolio
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-md mx-auto lg:mx-0">
@@ -90,8 +90,8 @@ function Landing() {
         </div>
 
         {/* Card Section */}
-        <div className="order-1 lg:order-2 w-full sm:w-auto">
-          <div className="transform scale-90 sm:scale-100 transition-transform duration-300 hover:scale-105">
+        <div className="order-1 lg:order-2 w-full sm:w-auto flex justify-center items-center">
+          <div className="transform scale-85 sm:scale-90 lg:scale-100 transition-transform duration-300 hover:scale-[1.02]">
             <HunterLicenseCard />
           </div>
         </div>
@@ -122,7 +122,7 @@ function Landing() {
         </div>
 
         {/* Mobile Social Icons */}
-        <div className="flex lg:hidden justify-center gap-6 mt-8 order-4">
+        <div className="flex lg:hidden justify-center gap-4 mt-4 order-4">
           {socialLinks.map((social, index) => (
             <a
               key={index}
