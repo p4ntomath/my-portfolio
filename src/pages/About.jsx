@@ -7,18 +7,20 @@ function About() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-[var(--fourth)] to-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-16">
+      <div className="max-w-[1920px] mx-auto pl-8 pr-4 sm:px-6 lg:px-12 py-12">
+        <div className="flex flex-col lg:flex-row items-start justify-between max-w-full">
           {/* Left side - Phone */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+          <div className="w-full lg:w-auto lg:ml-8">
             <div className="transform hover:scale-105 transition-transform duration-300">
               <Phone setSelectedOption={setSelectedOption} />
             </div>
           </div>
 
           {/* Right side - Content Display */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start items-start lg:pt-32">
-            <ContentDisplay selectedOption={selectedOption} />
+          <div className="w-full lg:w-1/2 lg:mr-12 flex justify-end items-start lg:pt-40">
+            <div className="max-w-xl">
+              <ContentDisplay selectedOption={selectedOption} />
+            </div>
           </div>
         </div>
 
