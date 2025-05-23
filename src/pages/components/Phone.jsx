@@ -30,7 +30,7 @@ export function Phone({ setSelectedOption }) {
   };
 
   return (
-    <div className='relative transform translate-y-16 translate-x-24'>
+    <div className='relative transform translate-y-12 '>
       {/* Wing decorations */}
       <img className='absolute top-[30px] left-[180px] w-32 object-contain z-10' src={phoneWingRight} alt="" />
       <img className='absolute top-[30px] left-[-100px] w-32 object-contain z-10' src={phoneWingLeft} alt="" />
@@ -61,7 +61,7 @@ export function Phone({ setSelectedOption }) {
         </div>
 
         {/* Phone Body */}
-        <div className="relative bottom-16 left-0.5 w-48 h-96  shadow-xl rounded-b-md
+        <div className="relative bottom-16 left-0.5 w-48 h-[420px] shadow-xl rounded-b-md
           before:absolute before:inset-0 before:bg-black/10 before:rounded-b-md bg-[#c72d56]">
           {/* Phone Screen */}
           <PhoneScreen 

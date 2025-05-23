@@ -12,14 +12,20 @@ function Landing() {
   const [positions, setPositions] = useState([]);
   const [isVisible, setIsVisible] = useState(true);
   const landingRef = useRef(null);
+  const animationRef = useRef(null);
 
-  // Detect when Landing component is visible
+  const socialLinks = [
+    { href: "https://github.com/p4ntomath", icon: githubIcon, alt: "GitHub" },
+    { href: "https://www.linkedin.com/in/mahlatse-rabothata-14641a287/", icon: linkedinIcon, alt: "LinkedIn" },
+    { href: "mailto:morwawarabothata5@gmail.com", icon: emailIcon, alt: "Email" },
+    { href: "https://wa.me/0630311427", icon: whatsappIcon, alt: "WhatsApp" },
+    { href: "tel:+27630311427", icon: phoneIcon, alt: "Phone" }
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 } // Trigger when at least 10% of the component is visible
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
     );
 
     if (landingRef.current) {
@@ -27,114 +33,107 @@ function Landing() {
     }
 
     return () => {
-      if (landingRef.current) {
-        observer.unobserve(landingRef.current);
-      }
+      if (landingRef.current) observer.unobserve(landingRef.current);
     };
   }, []);
 
-  // Generate random positions within the right 1/3 of the screen
   useEffect(() => {
-    if (!isVisible) return; // Stop updating positions when off-screen
+    if (!isVisible) return;
 
     const generatePositions = () => {
-      const newPositions = [];
-      for (let i = 0; i < 5; i++) {
-        const x = 70 + Math.random() * 20;
+      const newPositions = socialLinks.map((_, index) => {
+        // Base positions that look good visually
+        const baseX = window.innerWidth < 768 ? 50 : 70;
+        const spreadX = window.innerWidth < 768 ? 40 : 20;
+        
+        // Add some randomization but keep it contained
+        const x = baseX + (Math.random() - 0.5) * spreadX;
         const y = 20 + Math.random() * 60;
-        newPositions.push({ x, y });
-      }
+
+        // Add smooth transitions
+        return {
+          x,
+          y,
+          transition: `all ${2 + Math.random()}s ease-in-out`
+        };
+      });
+
       setPositions(newPositions);
     };
 
+    // Initial positions
     generatePositions();
-    const interval = setInterval(generatePositions, 5000);
 
-    return () => clearInterval(interval);
+    // Set up the interval for continuous movement
+    const intervalId = setInterval(generatePositions, 3000);
+    animationRef.current = intervalId;
+
+    return () => {
+      if (animationRef.current) {
+        clearInterval(animationRef.current);
+      }
+    };
   }, [isVisible]);
 
   return (
-    <div ref={landingRef} className="flex items-center justify-center relative min-h-screen">
-      {/* Left Side Content */}
-      <div className="hidden md:block m-8 w-1/3">
-        <h2 className="text-2xl font-bold">Welcome To Mahlatse's Portfolio</h2>
-        <p className="mt-2 text-xs text-gray-600">
-          Explore my work, skills, and projects that highlight my passion for technology and design. Feel free to browse and discover how I can help bring your ideas to life!
-        </p>
-      </div>
+    <div ref={landingRef} className="min-h-screen w-full flex flex-col justify-center items-center px-4 py-8 lg:py-0 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
+        {/* Content Section */}
+        <div className="w-full lg:w-1/3 text-center lg:text-left order-2 lg:order-1">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent">
+            Welcome To My Portfolio
+          </h1>
+          <p className="text-base sm:text-lg text-gray-600 max-w-md mx-auto lg:mx-0">
+            Explore my work, skills, and projects that highlight my passion for technology and design. 
+            Feel free to browse and discover how I can help bring your ideas to life!
+          </p>
+        </div>
 
-      {/* Hunter License Card */}
-      <div className="relative">
-        <HunterLicenseCard />
-      </div>
+        {/* Card Section */}
+        <div className="order-1 lg:order-2 w-full sm:w-auto">
+          <div className="transform scale-90 sm:scale-100 transition-transform duration-300 hover:scale-105">
+            <HunterLicenseCard />
+          </div>
+        </div>
 
-      {/* Floating Icons Container */}
-      <div className="w-1/3 hidden md:block overflow-hidden">
-        <div className="inset-0">
-          <a
-            href="https://github.com/p4ntomath"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              left: `${positions[0]?.x || 70}%`,
-              top: `${positions[0]?.y || 50}%`,
-              transition: "left 5s, top 5s",
-            }}
-            className="w-8 h-8 hover:opacity-75"
-          >
-            <img src={githubIcon} alt="GitHub" className="w-full h-full" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mahlatse-rabothata-14641a287/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              position: "absolute",
-              left: `${positions[1]?.x || 75}%`,
-              top: `${positions[1]?.y || 55}%`,
-              transition: "left 5s, top 5s",
-            }}
-            className="w-8 h-8 hover:opacity-75"
-          >
-            <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
-          </a>
-          <a
-            href="mailto:morwawarabothata5@gmail.com"
-            style={{
-              position: "absolute",
-              left: `${positions[2]?.x || 80}%`,
-              top: `${positions[2]?.y || 60}%`,
-              transition: "left 5s, top 5s",
-            }}
-            className="w-8 h-8 hover:opacity-75"
-          >
-            <img src={emailIcon} alt="Email" className="w-full h-full" />
-          </a>
-          <a
-            href="https://wa.me/0630311427"
-            style={{
-              position: "absolute",
-              left: `${positions[3]?.x || 80}%`,
-              top: `${positions[3]?.y || 60}%`,
-              transition: "left 5s, top 5s",
-            }}
-            className="w-8 h-8 hover:opacity-75"
-          >
-            <img src={whatsappIcon} alt="Email" className="w-full h-full" />
-          </a>
-          <a
-            href="tel:+27630311427"
-            style={{
-              position: "absolute",
-              left: `${positions[4]?.x || 80}%`,
-              top: `${positions[4]?.y || 60}%`,
-              transition: "left 5s, top 5s",
-            }}
-            className="w-8 h-8 hover:opacity-75"
-          >
-            <img src={phoneIcon} alt="Email" className="w-full h-full" />
-          </a>
+        {/* Desktop Social Icons */}
+        <div className="w-1/3 hidden lg:block relative h-[400px] order-3">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute transition-all duration-500 hover:scale-110"
+              style={{
+                left: `${positions[index]?.x || 70 + index * 5}%`,
+                top: `${positions[index]?.y || 50}%`,
+                transform: 'translate(-50%, -50%)',
+                transition: positions[index]?.transition || 'all 2s ease-in-out'
+              }}
+            >
+              <img 
+                src={social.icon} 
+                alt={social.alt} 
+                className="w-8 h-8 filter hover:brightness-110 transition-all duration-300" 
+              />
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile Social Icons */}
+        <div className="flex lg:hidden justify-center gap-6 mt-8 order-4">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 hover:opacity-75 transition-all duration-300 hover:scale-110"
+            >
+              <img src={social.icon} alt={social.alt} className="w-full h-full" />
+            </a>
+          ))}
         </div>
       </div>
     </div>

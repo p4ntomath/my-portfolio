@@ -136,13 +136,18 @@ export function ContentDisplay({ selectedOption }) {
 
   return (
     <div className={`transition-all duration-300 w-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-xl">
-        <div className="flex items-center gap-4 mb-8">
-          <span className="text-3xl">{typeof content[selectedOption].icon === 'string' ? content[selectedOption].icon : content[selectedOption].icon}</span>
-          <h2 className="text-3xl font-bold text-[var(--secondary)]">{content[selectedOption].title}</h2>
+      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-xl">
+        <div className="flex items-center gap-4 mb-4 sm:mb-8">
+          <span className="text-2xl sm:text-3xl">{typeof content[selectedOption].icon === 'string' ? content[selectedOption].icon : content[selectedOption].icon}</span>
+          <h2 className="text-xl sm:text-3xl font-bold text-[var(--secondary)]">{content[selectedOption].title}</h2>
         </div>
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
           {content[selectedOption].content}
+        </div>
+
+        {/* Mobile Instructions */}
+        <div className="mt-6 text-center sm:hidden">
+          <p className="text-sm text-gray-600">Use ↑↓ arrows to explore more</p>
         </div>
       </div>
     </div>
