@@ -35,16 +35,18 @@ export function ContentDisplay({ selectedOption }) {
       content: (
         <div className="space-y-4">
           <div className="border-l-4 border-[var(--secondary)] pl-4">
-            <h3 className="font-bold">BSc Physics and Computer Science</h3>
-            <p className="text-sm text-gray-600">University of Limpopo | 2020 - 2023</p>
+            <h3 className="font-bold">Bachelor of Science (BSc)</h3>
+            <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
+            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Expected Graduation: 2025</p>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Relevant Coursework</h3>
             <ul className="list-disc list-inside text-sm">
-              <li>Data Structures & Algorithms</li>
-              <li>Quantum Computing</li>
-              <li>Software Engineering</li>
-              <li>Advanced Physics</li>
+              <li>Software Design</li>
+              <li>Mobile Computing</li>
+              <li>Scientific Computing</li>
+              <li>Data Structures and Analysis of Algorithms</li>
+              <li>Mechanics & Mathematical Modelling</li>
             </ul>
           </div>
         </div>
@@ -56,12 +58,16 @@ export function ContentDisplay({ selectedOption }) {
       content: (
         <div className="space-y-4">
           <div className="achievement-card p-4 bg-white/80 rounded-lg shadow-md">
-            <h3 className="font-bold text-[var(--secondary)]">🏆 Academic Excellence</h3>
-            <p className="text-sm">Dean's List | 2021-2023</p>
+            <h3 className="font-bold text-[var(--secondary)]">🏆 Certificate Of Merit</h3>
+            <p className="text-sm">Mobile Computing II</p>
           </div>
           <div className="achievement-card p-4 bg-white/80 rounded-lg shadow-md">
-            <h3 className="font-bold text-[var(--secondary)]">💻 Hackathon Winner</h3>
-            <p className="text-sm">First Place | University Tech Challenge 2023</p>
+            <h3 className="font-bold text-[var(--secondary)]">🌟 Top Achiever 2023</h3>
+            <p className="text-sm">Knockando Hall Of Residence</p>
+          </div>
+          <div className="achievement-card p-4 bg-white/80 rounded-lg shadow-md">
+            <h3 className="font-bold text-[var(--secondary)]">🔑 Golden Key Honor</h3>
+            <p className="text-sm">Academic Excellence Recognition</p>
           </div>
         </div>
       )
@@ -70,39 +76,102 @@ export function ContentDisplay({ selectedOption }) {
       icon: <FontAwesomeIcon icon={faCode} className="text-[var(--secondary)]" />,
       title: "Skills",
       content: (
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <h3 className="font-bold">Frontend</h3>
-            <div className="space-y-1">
-              <div className="skill-bar">
-                <span className="text-sm">React</span>
-                <div className="h-2 bg-gray-200 rounded-full">
-                  <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '90%'}}></div>
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Programming Languages */}
+            <div className="space-y-3">
+              <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+                💻 Programming Languages
+              </h3>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">JavaScript / TypeScript</span>
+                  <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '90%'}}></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Python</span>
+                  <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '95%'}}></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">C++</span>
+                  <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '50%'}}></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">Java</span>
+                  <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">SQL</span>
+                  <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '85%'}}></div>
+                  </div>
                 </div>
               </div>
-              <div className="skill-bar">
-                <span className="text-sm">TypeScript</span>
-                <div className="h-2 bg-gray-200 rounded-full">
-                  <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '85%'}}></div>
+            </div>
+
+            {/* Web Development */}
+            <div className="space-y-3">
+              <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+                🌐 Web Development
+              </h3>
+              <div className="space-y-1">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React.js</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">Vite</span>
+                <span className="inline-block bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded ml-1">Tailwind CSS</span>
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-1">Bootstrap</span>
+                <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded ml-1">Firebase</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">REST APIs</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Node.js</span>
+              </div>
+            </div>
+
+            {/* Tools & Platforms */}
+            <div className="space-y-3">
+              <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+                🛠️ Tools & Platforms
+              </h3>
+              <div className="space-y-1">
+                <span className="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Git & GitHub</span>
+                <span className="inline-block bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded ml-1">Figma</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">VS Code</span>
+              </div>
+            </div>
+
+            {/* Mathematics & Scientific Computing */}
+            <div className="space-y-3">
+              <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+                🔬 Mathematics & Scientific Computing
+              </h3>
+              <div className="space-y-1">
+                <div className="space-y-1">
+                  <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MATLAB</span>
+                  <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">SciPy</span>
+                  <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">NumPy</span>
+                  <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">SymPy</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="space-y-2">
-            <h3 className="font-bold">Backend</h3>
+
+          {/* Additional Skills */}
+          <div className="border-t pt-4">
+            <h3 className="font-bold text-[var(--secondary)] mb-3 flex items-center gap-2">
+              ✨ Additional Skills
+            </h3>
             <div className="space-y-1">
-              <div className="skill-bar">
-                <span className="text-sm">Node.js</span>
-                <div className="h-2 bg-gray-200 rounded-full">
-                  <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '80%'}}></div>
-                </div>
-              </div>
-              <div className="skill-bar">
-                <span className="text-sm">Python</span>
-                <div className="h-2 bg-gray-200 rounded-full">
-                  <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '95%'}}></div>
-                </div>
-              </div>
+              <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Tutoring</span>
+              <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Public Speaking</span>
+              <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-1">Leadership</span>
+              <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded ml-1">Teamwork</span>
+              <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded ml-1">Teaching</span>
             </div>
           </div>
         </div>

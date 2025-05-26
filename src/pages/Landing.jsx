@@ -42,9 +42,9 @@ function Landing() {
 
     const generatePositions = () => {
       const newPositions = socialLinks.map((_, index) => {
-        // Base positions that look good visually
-        const baseX = window.innerWidth < 768 ? 50 : 70;
-        const spreadX = window.innerWidth < 768 ? 40 : 20;
+        // Base positions that look good visually - increased spread for desktop
+        const baseX = window.innerWidth < 768 ? 50 : 50; // Center the base position
+        const spreadX = window.innerWidth < 768 ? 40 : 60; // Increased spread from 20 to 60
         
         // Add some randomization but keep it contained
         const x = baseX + (Math.random() - 0.5) * spreadX;
@@ -97,7 +97,7 @@ function Landing() {
         </div>
 
         {/* Desktop Social Icons */}
-        <div className="w-1/3 hidden lg:block relative h-[400px] order-3">
+        <div className="w-1/2 hidden lg:block relative h-[400px] order-3">
           {socialLinks.map((social, index) => (
             <a
               key={index}
@@ -106,7 +106,7 @@ function Landing() {
               rel="noopener noreferrer"
               className="absolute transition-all duration-500 hover:scale-110"
               style={{
-                left: `${positions[index]?.x || 70 + index * 5}%`,
+                left: `${positions[index]?.x || 50 + index * 5}%`,
                 top: `${positions[index]?.y || 50}%`,
                 transform: 'translate(-50%, -50%)',
                 transition: positions[index]?.transition || 'all 2s ease-in-out'
@@ -115,7 +115,7 @@ function Landing() {
               <img 
                 src={social.icon} 
                 alt={social.alt} 
-                className="w-8 h-8 filter hover:brightness-110 transition-all duration-300" 
+                className="w-10 h-10 filter hover:brightness-110 transition-all duration-300" 
               />
             </a>
           ))}
