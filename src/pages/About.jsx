@@ -6,7 +6,7 @@ function About() {
   const [selectedOption, setSelectedOption] = useState('Who I Am');
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-[var(--fourth)] to-white relative overflow-x-hidden">
+    <div className="w-full min-h-screen relative overflow-x-hidden">
       <div className="container mx-auto px-4 py-8 lg:py-12 h-full">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-6rem)] gap-8 lg:gap-24">
           {/* Left side - Phone */}

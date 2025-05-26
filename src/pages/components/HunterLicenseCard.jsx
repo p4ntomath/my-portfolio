@@ -18,17 +18,17 @@ export default function HunterLicenseCard() {
                 </div>
               </div>
               <div className="h-1/3 bg-blue-300 flex flex-col items-center justify-between rounded-b-xl p-2">
-                <div className="w-full bg-amber-50 h-9 rounded-sm flex justify-center items-center font-bold">
+                <div className="w-full bg-white h-9 rounded-sm flex justify-center items-center font-bold">
                   <h1 className="text-sm">ラッキー Rabothata</h1>
                 </div>
-                <div className="w-full bg-amber-50">
+                <div className="w-full bg-white">
                   <p className="text-xs px-1.5">Software Engineer</p>
                 </div>
-                <div className="w-full bg-amber-50">
-                  <p className="text-xs px-1.5">Software Designer</p>
-                </div>
-                <div className="w-full bg-amber-50">
+                <div className="w-full bg-white">
                   <p className="text-xs px-1.5">Computational Scientist</p>
+                </div>
+                <div className="w-full bg-white">
+                  <p className="text-xs px-1.5"></p>
                 </div>
               </div>
             </div>
