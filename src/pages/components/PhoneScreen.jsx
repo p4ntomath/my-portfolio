@@ -96,7 +96,7 @@ export function PhoneScreen({ selectedIndex, setSelectedIndex }) {
           <div className="h-6 mt-1 px-2 pt-1 border-t border-[#2C3E50]/20">
             <div className="font-text text-xs font-bold text-[#2C3E50] flex items-center justify-between">
               <span>{selectedIndex + 1}/{menuOptions.length}</span>
-              <span className="text-[10px]">Use ↑↓ to navigate</span>
+              <span className="text-[10px]">Use ↑↓</span>
             </div>
           </div>
         </div>
