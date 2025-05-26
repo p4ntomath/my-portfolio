@@ -161,19 +161,6 @@ export function ContentDisplay({ selectedOption }) {
             </div>
           </div>
 
-          {/* Additional Skills */}
-          <div className="border-t pt-4">
-            <h3 className="font-bold text-[var(--secondary)] mb-3 flex items-center gap-2">
-              ✨ Additional Skills
-            </h3>
-            <div className="space-y-1">
-              <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Tutoring</span>
-              <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Public Speaking</span>
-              <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-1">Leadership</span>
-              <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded ml-1">Teamwork</span>
-              <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded ml-1">Teaching</span>
-            </div>
-          </div>
         </div>
       )
     },
@@ -183,20 +170,20 @@ export function ContentDisplay({ selectedOption }) {
       content: (
         <div className="grid grid-cols-2 gap-4">
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">🔭 Physics</h3>
-            <p className="text-sm">Quantum Computing & Theory</p>
+            <h3 className="font-bold">💻 Programming</h3>
+            <p className="text-sm">Software Development & Problem Solving</p>
           </div>
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">🎮 Gaming</h3>
-            <p className="text-sm">Strategy & RPGs</p>
+            <h3 className="font-bold">🔬 Computational Physics</h3>
+            <p className="text-sm">Simulations & Mathematical Modeling</p>
           </div>
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">📚 Reading</h3>
-            <p className="text-sm">Sci-Fi & Technical</p>
+            <h3 className="font-bold">🌸 Anime</h3>
+            <p className="text-sm">Japanese Animation & Culture</p>
           </div>
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">🎨 Design</h3>
-            <p className="text-sm">UI/UX & Graphics</p>
+            <h3 className="font-bold">🎵 Music Production</h3>
+            <p className="text-sm">Beat Making & Audio Engineering</p>
           </div>
         </div>
       )
