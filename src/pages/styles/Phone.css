@@ -1,39 +1,13 @@
-/* Container styling */
-.book-container {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  background: #f5f5f5;
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.font-text {
+  font-family: 'Share Tech Mono', monospace;
 }
 
-/* Book styling */
-.two-page-view {
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-/* Page base styling */
-.page {
-  background: white;
-  padding: 2rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Special page types */
-.cover-page {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.left-page {
-  border-right: 1px solid #eee;
-}
-
-.right-page {
-  border-left: 1px solid #eee;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

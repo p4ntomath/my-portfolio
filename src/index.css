@@ -5,7 +5,17 @@ html {
 
 :root {
   --primary: #000000; /* Black (Main background) */
-  --secondary: #B8244B; /* Orange */
+  --secondary: #B8244B; /* Red */
   --tertiary: #3B2F2F; /* Dark Brown (Accent stripe) */
   --fourth: #A8D0E6; /* Light Blue (Text background) */
+}
+
+@layer components {
+  .nav-link-underline {
+    @apply absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 transition-transform duration-200;
+  }
+
+  .nav-link:hover .nav-link-underline {
+    @apply scale-x-100;
+  }
 }

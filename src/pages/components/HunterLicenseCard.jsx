@@ -34,15 +34,18 @@ export default function HunterLicenseCard() {
             </div>
   
             {/* BACK SIDE */}
-            <div className="card__back absolute top-0 bottom-0 right-0 left-0 w-full h-full bg-blue-300 border-1 border-black rounded-xl flex flex-col items-center justify-center transform rotate-y-180 backface-hidden p-4">
-              <div className="w-full h-10 bg-gray-900 text-white flex items-center justify-center rounded-lg mb-4">
-                <h1 className="font-bold text-sm desc-p">Mahlatse Rabothata</h1>
-              </div>
-              <div className="w-full h-32 bg-gray-900 rounded-md flex items-center justify-center text-white">
-                <p className="text-center text-xs px-1 text-balck desc-p">a passionate and driven final year student majoring in Computer Science and Applied Mathematics with keen interest in software development and coding</p>
-              </div>
-              <div className="w-full h-8 bg-gray-900 rounded-md mt-4 flex items-center justify-center text-white text-xs">
-                <p className="desc-p">ID: 123456789</p>
+            <div className="card__back absolute top-0 bottom-0 right-0 left-0 w-full h-full bg-white border-1 border-black rounded-xl flex flex-col items-center justify-center transform rotate-y-180 backface-hidden p-2">
+              <div className="bg-blue-300 h-full w-full rounded-md">
+                <div className="flex flex-col justify-end h-full w-full">
+                  <div className="w-1.2">
+                    <div className="bg-black w-10">
+                    </div>
+                    <div className="bg-black w-10">
+                    </div>
+                  </div>
+                <div className="bg-black ml-34 h-full w-10">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
