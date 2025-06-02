@@ -14,7 +14,7 @@ export function ContentDisplay({ selectedOption }) {
   const content = {
     "Who I Am": {
       icon: "👋",
-      title: "Who I Am",
+      title: "Who Am I",
       content: (
         <div className="space-y-4">
           <p className="text-lg">
@@ -37,7 +37,7 @@ export function ContentDisplay({ selectedOption }) {
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Bachelor of Science (BSc)</h3>
             <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
-            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Expected Graduation: 2025</p>
+            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Expected Graduation: 2026</p>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Relevant Coursework</h3>

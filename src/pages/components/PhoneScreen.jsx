@@ -3,7 +3,7 @@ import '../styles/Phone.css';
 
 export function PhoneScreen({ selectedIndex, setSelectedIndex }) {
   const menuOptions = [
-    "Who I Am",
+    "Who Am I",
     "Education",
     "Achievements",
     "Skills",
