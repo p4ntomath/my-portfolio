@@ -8,11 +8,17 @@
   align-items: center;
 }
 
-.pokemon-logo {
-  width: 80%;
-  max-width: 300px;
-  margin-bottom: 20px;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 400;
 }
 
 .page {
@@ -33,106 +39,171 @@
 }
 
 .cover {
-  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   font-weight: bold;
 }
 
-.pokemon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+.book-cover-image {
   width: 100%;
-  padding: 0 5px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.pokemon-container img {
-  width: 70%;
-  max-height: 200px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.pokemon-container img:hover {
-  transform: scale(1.05);
-}
-
-.pokemon-info {
-  width: 100%;
-}
-
-.pokemon-name {
-  font-size: clamp(1rem, 3vw, 1.8rem);
+.back-cover-title {
+  font-size: 2.2rem;
   font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.pokemon-number {
-  font-size: clamp(0.7rem, 2vw, 1rem);
-  color: #7f8c8d;
+.back-cover-text {
+  font-size: 1.1rem;
+  opacity: 0.9;
   margin-bottom: 10px;
 }
 
-.pokemon-type {
+.back-cover-contact {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.project-info {
+  width: 100%;
+}
+
+.project-name {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.project-number {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.project-tech {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
   font-weight: 500;
   color: white;
-  margin: 0 3px 5px 3px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
-.type-electric {
-  background-color: #f1c40f;
+.project-tech:hover {
+  transform: translateY(-1px);
 }
 
-.type-ground {
-  background-color: #e67e22;
-}
-
-.type-poison {
-  background-color: #9b59b6;
-}
-
-.type-fire {
-  background-color: #e74c3c;
-}
-
-.type-flying {
-  background-color: #3498db;
-}
-
-.type-water {
-  background-color: #2980b9;
-}
-
-.type-dark {
-  background-color: #34495e;
-}
-
-.type-fighting {
-  background-color: #d35400;
-}
-
-.type-steel {
-  background-color: #7f8c8d;
-}
-
-.type-rock {
-  background-color: #9a7b4f;
-}
-
-.pokemon-description {
-  font-size: 14px;
+.project-description {
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
   color: #34495e;
-  margin-top: 8px;
-  line-height: 1.4;
+  line-height: 1.5;
+  text-align: justify;
+  margin-top: 5px;
 }
 
 .demoPage {
   background: #fff;
   color: #000;
+}
+
+.book-flipbook {
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .page-content {
+    padding: 15px 10px;
+  }
+  
+  .project-name {
+    font-size: clamp(0.95rem, 4vw, 1.3rem);
+    line-height: 1.2;
+  }
+  
+  .project-number {
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+    margin-bottom: 10px;
+  }
+  
+  .project-tech {
+    padding: 3px 8px;
+    font-size: clamp(0.6rem, 2.5vw, 0.75rem);
+    margin: 0 2px 3px 2px;
+  }
+  
+  .project-description {
+    font-size: clamp(0.7rem, 2.8vw, 0.85rem);
+    line-height: 1.4;
+  }
+  
+  .projects-title {
+    font-size: 1.8rem;
+  }
+  
+  .projects-subtitle {
+    font-size: 1rem;
+  }
+  
+  .back-cover-title {
+    font-size: 1.6rem;
+  }
+  
+  .back-cover-text {
+    font-size: 0.9rem;
+  }
+  
+  .back-cover-contact {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .page-content {
+    padding: 18px 12px;
+  }
+  
+  .project-name {
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+  }
+  
+  .project-tech {
+    padding: 3px 10px;
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+  }
+  
+  .project-description {
+    font-size: clamp(0.75rem, 2.2vw, 0.9rem);
+  }
 }

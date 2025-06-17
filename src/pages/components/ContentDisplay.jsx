@@ -192,7 +192,7 @@ export function ContentDisplay({ selectedOption }) {
 
   return (
     <div className={`transition-all duration-300 w-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-xl">
+      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-xl w-[480px] flex-shrink-0">
         <div className="flex items-center gap-4 mb-4 sm:mb-8">
           <span className="text-2xl sm:text-3xl">{typeof content[selectedOption].icon === 'string' ? content[selectedOption].icon : content[selectedOption].icon}</span>
           <h2 className="text-xl sm:text-3xl font-bold text-[var(--secondary)]">{content[selectedOption].title}</h2>

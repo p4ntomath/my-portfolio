@@ -6,7 +6,7 @@ function Projects() {
     return (
       <div className="container">
         <Book />
-    </div>
+      </div>
     );
   }
 export default Projects;
