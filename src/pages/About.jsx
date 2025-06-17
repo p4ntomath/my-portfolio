@@ -8,17 +8,19 @@ function About() {
   return (
     <div className="w-full min-h-screen relative overflow-x-hidden">
       <div className="container mx-auto px-4 py-8 lg:py-12 h-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-6rem)] gap-8 lg:gap-24">
-          {/* Left side - Phone */}
-          <div className="w-full lg:w-auto lg:flex-1 flex justify-center">
+        <div className="grid lg:grid-cols-2 items-center min-h-[calc(100vh-6rem)] gap-8 lg:gap-12">
+          {/* Left side - Phone - Moved to left */}
+          <div className="flex justify-center lg:justify-start lg:pl-9">
             <div className="transform scale-90 sm:scale-100 transition-transform duration-300">
               <Phone setSelectedOption={setSelectedOption} />
             </div>
           </div>
 
-          {/* Right side - Content Display */}
-          <div className="w-full lg:w-1/2 lg:flex-1">
-            <ContentDisplay selectedOption={selectedOption} />
+          {/* Right side - Content Display - Fixed width container */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="w-full max-w-2xl">
+              <ContentDisplay selectedOption={selectedOption} />
+            </div>
           </div>
         </div>
 

@@ -77,7 +77,7 @@ function Landing() {
 
   return (
     <div ref={landingRef} className="min-h-[100dvh] w-full flex items-center justify-center py-16 md:py-0 overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-4">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-8">
         {/* Content Section */}
         <div className="w-full lg:w-1/3 text-center lg:text-left order-2 lg:order-1">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent">
@@ -90,14 +90,14 @@ function Landing() {
         </div>
 
         {/* Card Section */}
-        <div className="order-1 lg:order-2 w-full sm:w-auto flex justify-center items-center">
+        <div className="md:mt-10 order-1 lg:order-2 w-full lg:w-1/3 flex justify-center items-center">
           <div className="transform scale-85 sm:scale-90 lg:scale-100 transition-transform duration-300 hover:scale-[1.02]">
             <HunterLicenseCard />
           </div>
         </div>
 
         {/* Desktop Social Icons */}
-        <div className="w-1/2 hidden lg:block relative h-[400px] order-3">
+        <div className="w-full lg:w-1/3 hidden lg:block relative h-[400px] order-3">
           {socialLinks.map((social, index) => (
             <a
               key={index}

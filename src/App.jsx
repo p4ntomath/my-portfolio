@@ -1,6 +1,9 @@
 import Nav from './pages/Nav';
 import Landing from './pages/Landing';
 import About from './pages/About';
+import Projects from './pages/Projects';
+import React from 'react';
+import './App.css';
 
 function App() {
   return (
@@ -16,7 +19,7 @@ function App() {
         </section>
 
         <section id="projects" className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/30 via-[var(--fourth)]/40 to-[var(--fourth)]/20 transition-all duration-1000 ease-in-out">
-          <h1 className="text-4xl font-bold">Projects</h1>
+          <Projects />
         </section>
 
         <section id="experience" className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/20 via-[var(--fourth)]/35 to-[var(--fourth)]/25 transition-all duration-1000 ease-in-out">

@@ -14,7 +14,7 @@ export function ContentDisplay({ selectedOption }) {
   const content = {
     "Who I Am": {
       icon: "👋",
-      title: "Who I Am",
+      title: "Who Am I",
       content: (
         <div className="space-y-4">
           <p className="text-lg">
@@ -37,7 +37,7 @@ export function ContentDisplay({ selectedOption }) {
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Bachelor of Science (BSc)</h3>
             <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
-            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Expected Graduation: 2025</p>
+            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Expected Graduation: 2026</p>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Relevant Coursework</h3>
@@ -192,18 +192,18 @@ export function ContentDisplay({ selectedOption }) {
 
   return (
     <div className={`transition-all duration-300 w-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-8 shadow-xl">
-        <div className="flex items-center gap-4 mb-4 sm:mb-8">
-          <span className="text-2xl sm:text-3xl">{typeof content[selectedOption].icon === 'string' ? content[selectedOption].icon : content[selectedOption].icon}</span>
-          <h2 className="text-xl sm:text-3xl font-bold text-[var(--secondary)]">{content[selectedOption].title}</h2>
+      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 sm:p-6 lg:p-8 shadow-xl w-full max-w-[320px] sm:max-w-[400px] lg:w-[480px] lg:max-w-[480px] flex-shrink-0 mx-auto">
+        <div className="flex items-center gap-2 sm:gap-4 mb-3 sm:mb-6 lg:mb-8">
+          <span className="text-lg sm:text-2xl lg:text-3xl">{typeof content[selectedOption].icon === 'string' ? content[selectedOption].icon : content[selectedOption].icon}</span>
+          <h2 className="text-base sm:text-xl lg:text-3xl font-bold text-[var(--secondary)]">{content[selectedOption].title}</h2>
         </div>
-        <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+        <div className="prose prose-xs sm:prose-sm lg:prose-base max-w-none">
           {content[selectedOption].content}
         </div>
 
         {/* Mobile Instructions */}
-        <div className="mt-6 text-center sm:hidden">
-          <p className="text-sm text-gray-600">Use ↑↓ arrows to explore more</p>
+        <div className="mt-4 sm:mt-6 text-center sm:hidden">
+          <p className="text-xs sm:text-sm text-gray-600">Use ↑↓ arrows to explore more</p>
         </div>
       </div>
     </div>
