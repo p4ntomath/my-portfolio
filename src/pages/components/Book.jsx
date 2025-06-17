@@ -34,12 +34,14 @@ function Book() {
 
   return (
     <HTMLFlipBook 
-      width={370} 
+        minWidth={200}
+        minHeight={300}
+      width={350} 
       height={500}
       maxShadowOpacity={0.5}
       drawShadow={true}
       showCover={true}
-      size='fixed'
+        size='fixed'
     >
       <div className="page" style={{ background: 'transparent' }}>
         <div className="page-content cover">
