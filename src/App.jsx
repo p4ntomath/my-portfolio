@@ -18,7 +18,7 @@ function App() {
           <About />
         </section>
 
-        <section id="projects" className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/30 via-[var(--fourth)]/40 to-[var(--fourth)]/20 transition-all duration-1000 ease-in-out">
+        <section id="projects" className="min-h-[120vh] flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/30 via-[var(--fourth)]/40 to-[var(--fourth)]/20 transition-all duration-1000 ease-in-out relative">
           <Projects />
         </section>
 
