@@ -11,11 +11,19 @@ export default function GreedIslandCard({
 }) {
     return (
       <div className="flex justify-center items-center min-h-auto p-8">
-        <div className="card relative w-70 h-96 cursor-pointer group transition-transform duration-300 ease-in-out hover:scale-110 hover:z-50">
+        <div className="card relative w-70 h-96 cursor-pointer group transition-transform duration-300 ease-in-out hover:scale-110 hover:z-50 select-none">
           {/* FRONT SIDE */}
           <div
-              className="h-full w-full bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${greedIslandCard})`}}
+              className="h-full w-full bg-cover bg-center bg-no-repeat select-none"
+              style={{ 
+                backgroundImage: `url(${greedIslandCard})`,
+                WebkitUserSelect: 'none',
+                WebkitTouchCallout: 'none',
+                WebkitTapHighlightColor: 'transparent'
+              }}
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+              onSelectStart={(e) => e.preventDefault()}
               >
               <div aria-label="job-id" className="absolute top-[16px] left-[20px] h-8 w-14 bg-[#DFDBC1] flex items-center justify-center">
                   <p className=" font-japanese text-lg">{id}</p>
