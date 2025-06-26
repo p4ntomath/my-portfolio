@@ -18,13 +18,13 @@ export default function GreedIslandCard({
               style={{ backgroundImage: `url(${greedIslandCard})`}}
               >
               <div aria-label="job-id" className="absolute top-[16px] left-[20px] h-8 w-14 bg-[#DFDBC1] flex items-center justify-center">
-                  <p className=" text-lg">{id}</p>
+                  <p className=" font-japanese text-lg">{id}</p>
               </div>
               <div aria-label="job-rank" className="absolute top-[16px] right-[20px] h-8 w-14 bg-[#DFDBC1] flex items-center justify-center">
-                  <p className=" text-lg">{rank}</p>
+                  <p className="font-japanese text-lg">{rank}</p>
               </div>
               <div aria-label="job-title" className="absolute top-[16px] left-[90px] h-8 w-25 bg-[#DFDBC1] flex items-center justify-center">
-                  <p className=" text-xs font-bold">{jobTitle}</p>
+                  <p className=" text-xs font-bold font-japanese">{jobTitle}</p>
               </div>
               <div aria-label="card-image" className="absolute top-[64px] left-[15px] h-[145px] w-[250px] bg-[#DFDBC1] flex items-center justify-center">
                   <img src={image} alt="" className="w-full h-full object-cover border-1" />
