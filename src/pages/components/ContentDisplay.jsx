@@ -85,7 +85,7 @@ export function ContentDisplay({ selectedOption }) {
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">JavaScript / TypeScript</span>
+                  <span className="text-sm">JavaScript</span>
                   <div className="w-20 h-2 bg-gray-200 rounded-full">
                     <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '90%'}}></div>
                   </div>
@@ -120,16 +120,18 @@ export function ContentDisplay({ selectedOption }) {
             {/* Web Development */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                🌐 Web Development
+                🌐Development
               </h3>
               <div className="space-y-1">
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React.js</span>
-                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">Vite</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">Flutter</span>
                 <span className="inline-block bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded ml-1">Tailwind CSS</span>
-                <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-1">Bootstrap</span>
-                <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded ml-1">Firebase</span>
-                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">REST APIs</span>
-                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Node.js</span>
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-1">Cloud Services</span>
+                <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded ml-1">BaaS</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Django</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Express.js</span>
+                <span className="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded ml-1">UI/UX</span>
+                <span className="inline-block bg-blue-100 text-gray-800 text-xs px-2 py-1 rounded ml-1">SQL / NoSQL</span>
               </div>
             </div>
 
