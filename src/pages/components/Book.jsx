@@ -18,22 +18,25 @@ function Book() {
       id: "2",
       name: "Wits Parking App",
       technologies: ["Java", "Android Studio", "PHP", "MySQL"],
-      description: "this solution addresses the chronic parking scarcity on campus through an intelligent parking management system. The MVP features real-time spot tracking where users log their parking location (including lot/spot numbers with staff/student restrictions) and update availability upon departure, while the enhancement layer introduces reservation capabilities optimized by destination proximity and time duration.the app transforms parking logistics from frustration to efficiency by combining ad hoc space management with smart search functionality based on campus venues",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop&crop=faces"
+      description: "this solution addresses the chronic parking scarcity on campus through an intelligent parking management system. The MVP features real-time spot tracking where users log their parking location (including lot/spot numbers with staff/student restrictions) and update availability upon departure, while the enhancement layer introduces reservation capabilities optimized by destination proximity and time duration",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop&crop=faces",
+      liveLink: "https://drive.google.com/file/d/1u9WwJhZS1B8NULRGXBsSCtHZ_Lvr4zQp/view?usp=drive_link"
     },
     {
       id: "3",
       name: "67 Volunteer Platform",
       technologies: ["Flutter", "AWS"],
       description: "A comprehensive Flutter application that bridges the gap between passionate volunteers and impactful non-profit organizations. The platform streamlines volunteer discovery by matching users with opportunities that align with their skills, interests, and availability while helping them gain valuable experience and build meaningful connections. the app creates an ecosystem where volunteers can easily find, apply for, and track their community service initiatives.",
-      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop&crop=faces"
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop&crop=faces",
+      liveLink : "https://github.com/p4ntomath/Sixty7Flutter"
     },
     {
       id: "4",
       name: "myBible App",
       technologies: ["Flutter", "Spotify API", "Bible API"],
       description: "a spiritually enriching mobile app designed to deepen daily faith practices through curated content and modern technology. the app delivers an inspirational Bible Verse of the Day and Gospel Song of the Day, along with personalized scripture and music recommendations. By blending intuitive design with meaningful spiritual resources, it creates a seamless digital sanctuary that nurtures devotion and connection through both scripture and song",
-      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop&crop=faces"
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop&crop=faces",
+      liveLink: "https://drive.google.com/file/d/1A8fWp80j4eYT_t1U3kJvVKxyrxGZarNu/view?usp=drive_link"
     }
   ];
 
@@ -91,7 +94,7 @@ function Book() {
                   rel="noopener noreferrer"
                   className="live-link-btn to-blue-400"
                 >
-                  [view]
+                  [view/download]
                 </a>
               )}
             </div>
