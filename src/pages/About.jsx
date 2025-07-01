@@ -7,11 +7,11 @@ function About() {
 
   return (
     <div className="w-full min-h-screen relative overflow-x-hidden">
-      <div className="container mx-auto px-4 py-8 lg:py-12 h-full">
+      <div className="w-full max-w-7xl mx-auto px-4 py-8 lg:py-12 h-full">
         <div className="grid lg:grid-cols-2 items-center min-h-[calc(100vh-6rem)] gap-8 lg:gap-12">
           {/* Left side - Phone - Moved to left */}
-          <div className="flex justify-center lg:justify-start lg:pl-9">
-            <div className="transform scale-90 sm:scale-100 transition-transform duration-300">
+          <div className="flex justify-center lg:justify-start lg:ml-24">
+            <div className="transform scale-90 sm:scale-100 transition-transform duration-300 max-w-sm">
               <Phone setSelectedOption={setSelectedOption} />
             </div>
           </div>

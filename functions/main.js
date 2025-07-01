@@ -126,8 +126,8 @@ async function sendEmailWithNodemailer(subject, senderName, senderEmail, message
   const htmlContent = `
 <div style="font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: auto; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
   <!-- Header -->
-  <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; padding: 24px; text-align: center;">
-   <h1 style="margin: 0; font-size: 22px; color: #ffffff;">New Contact Form Submission</h1>
+  <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff !important; padding: 24px; text-align: center;">
+    <h1 style="margin: 0; font-size: 22px; color: #ffffff !important;">📥 New Contact Form Submission</h1>
   </div>
 
   <!-- Contact Details -->
