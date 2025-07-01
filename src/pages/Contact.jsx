@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import KilluaSkateBoarding from '../assets/KilluaSkateBoarding.gif';
 import hxhlogo from '../assets/hxhlogo.png';
-import { databases, functions, DATABASE_ID, COLLECTION_ID, EMAIL_FUNCTION_ID, ID } from '../lib/appwrite';
+import { databases, DATABASE_ID, COLLECTION_ID, ID } from '../lib/appwrite';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ function Contact() {
 
         try {
             // Create document in Appwrite database
-            const document = await databases.createDocument(
+            await databases.createDocument(
                 DATABASE_ID,
                 COLLECTION_ID,
                 ID.unique(),
@@ -48,20 +48,26 @@ function Contact() {
                 }
             );
 
-            // Trigger email notification cloud function
+            // Send email notification via Netlify function
             try {
-                await functions.createExecution(
-                    EMAIL_FUNCTION_ID,
-                    JSON.stringify({
+                const emailResponse = await fetch('/.netlify/functions/send-email-notification', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
                         name: formData.fullName.trim(),
                         email: formData.email.trim(),
                         subject: formData.subject.trim(),
-                        message: formData.message.trim(),
-                        documentId: document.$id
+                        message: formData.message.trim()
                     })
-                );
+                });
+
+                if (!emailResponse.ok) {
+                    console.warn('Email notification failed, but message was saved');
+                }
             } catch (emailError) {
-                console.warn('Email notification failed:', emailError);
+                console.warn('Email notification error:', emailError);
                 // Don't fail the whole process if email fails
             }
 
