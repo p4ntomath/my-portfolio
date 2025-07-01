@@ -111,13 +111,23 @@ async function sendEmailWithNodemailer(subject, senderName, senderEmail, message
     }
   });
 
+  const submissionDate = new Date().toLocaleString('en-ZA', { 
+    timeZone: 'Africa/Johannesburg',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+}).replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}:\d{2}:\d{2})/, '$3-$2-$1 $4');
+
   // Email HTML content
- // Email HTML content
-const htmlContent = `
+  const htmlContent = `
 <div style="font-family: 'Segoe UI', sans-serif; max-width: 600px; margin: auto; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
   <!-- Header -->
   <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; padding: 24px; text-align: center;">
-    <h1 style="margin: 0; font-size: 22px;">📥 New Contact Form Submission</h1>
+   <h1 style="margin: 0; font-size: 22px; color: #ffffff;">New Contact Form Submission</h1>
   </div>
 
   <!-- Contact Details -->
@@ -125,8 +135,7 @@ const htmlContent = `
     <h2 style="color: #0f172a; font-size: 18px; margin: 0 0 16px;">Contact Details</h2>
     <p style="margin: 4px 0;"><strong>Name:</strong> ${senderName}</p>
     <p style="margin: 4px 0;"><strong>Email:</strong> <a href="mailto:${senderEmail}" style="color: #2563eb; text-decoration: none;">${senderEmail}</a></p>
-    <p style="margin: 4px 0;"><strong>Subject:</strong> ${subject}</p>
-    <p style="margin: 4px 0;"><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+    <p style="margin: 4px 0;"><strong>Submitted:</strong> ${submissionDate}</p>
   </div>
 
   <!-- Message -->
@@ -155,7 +164,16 @@ Name: ${senderName}
 Email: ${senderEmail}
 Subject: ${subject}
 Document ID: ${documentId}
-Submitted: ${new Date().toLocaleString()}
+Submitted: ${new Date().toLocaleString('en-ZA', { 
+  timeZone: 'Africa/Johannesburg',
+  year: 'numeric',
+  month: '2-digit', 
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: false
+})} SAST
 
 Message:
 ${message}

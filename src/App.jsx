@@ -20,7 +20,7 @@ function App() {
           <About />
         </section>
 
-        <section id="projects" className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/30 via-[var(--fourth)]/40 to-[var(--fourth)]/20 transition-all duration-1000 ease-in-out relative">
+        <section id="projects" className=" min-h-fit flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/30 via-[var(--fourth)]/40 to-[var(--fourth)]/20 transition-all duration-1000 ease-in-out relative py-8">
           <Projects />
         </section>
 

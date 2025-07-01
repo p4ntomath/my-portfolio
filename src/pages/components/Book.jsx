@@ -42,8 +42,6 @@ function Book() {
 
   return (
     <HTMLFlipBook 
-        minWidth={200}
-        minHeight={300}
       width={350} 
       height={500}
       maxShadowOpacity={0.5}
