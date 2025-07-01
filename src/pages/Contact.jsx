@@ -1,7 +1,85 @@
+import { useState } from 'react';
 import KilluaSkateBoarding from '../assets/KilluaSkateBoarding.gif';
 import hxhlogo from '../assets/hxhlogo.png';
+import { databases, functions, DATABASE_ID, COLLECTION_ID, EMAIL_FUNCTION_ID, ID } from '../lib/appwrite';
 
 function Contact() {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        // Validate that all fields are filled
+        if (!formData.fullName.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+            setSubmitStatus('validation');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            // Create document in Appwrite database
+            const document = await databases.createDocument(
+                DATABASE_ID,
+                COLLECTION_ID,
+                ID.unique(),
+                {
+                    name: formData.fullName.trim(),
+                    email: formData.email.trim(),
+                    subject: formData.subject.trim(),
+                    message: formData.message.trim(),
+                    createdAt: new Date().toISOString()
+                }
+            );
+
+            // Trigger email notification cloud function
+            try {
+                await functions.createExecution(
+                    EMAIL_FUNCTION_ID,
+                    JSON.stringify({
+                        name: formData.fullName.trim(),
+                        email: formData.email.trim(),
+                        subject: formData.subject.trim(),
+                        message: formData.message.trim(),
+                        documentId: document.$id
+                    })
+                );
+            } catch (emailError) {
+                console.warn('Email notification failed:', emailError);
+                // Don't fail the whole process if email fails
+            }
+
+            setSubmitStatus('success');
+            setFormData({
+                fullName: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
       <div className="w-screen flex flex-col items-center justify-center min-h-screen pb-2">
         {/* Top instruction */}
@@ -23,14 +101,37 @@ function Contact() {
           
           {/* Contact Form */}
           <div className="p-3 w-screen lg:w-1/2 flex items-center">
-            <div className="bg-[#70668c] rounded-2xl p-6 shadow-2xl border-l-4 border-red-500 border-t border-r border-b border-slate-200 w-xl">
+            <div className="bg-[#70668c] rounded-2xl p-6 shadow-2xl border-l-4 border-t border-r border-b border-slate-200 w-xl">
               <h2 className="text-xl font-bold text-white mb-4 text-center">Contact Me</h2>
               
-              <form className="space-y-4">
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                  Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  Failed to send message. Please try again or contact me directly.
+                </div>
+              )}
+              
+              {submitStatus === 'validation' && (
+                <div className="mb-4 p-3 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg">
+                  Please fill in all fields before submitting.
+                </div>
+              )}
+              
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
                     placeholder="Full Name"
+                    required
                     className="w-full px-4 py-2 bg-[#ede2ec] text-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9d98ad] transition-colors placeholder-slate-400"
                   />
                 </div>
@@ -38,7 +139,11 @@ function Contact() {
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Email Address"
+                    required
                     className="w-full px-4 py-2 bg-[#ede2ec] text-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9d98ad] transition-colors placeholder-slate-400"
                   />
                 </div>
@@ -46,7 +151,11 @@ function Contact() {
                 <div>
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
                     placeholder="Subject"
+                    required
                     className="w-full px-4 py-2 bg-[#ede2ec] text-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9d98ad] transition-colors placeholder-slate-400"
                   />
                 </div>
@@ -54,16 +163,25 @@ function Contact() {
                 <div>
                   <textarea
                     rows="3"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Message"
+                    required
                     className="w-full px-4 py-2 bg-[#ede2ec] text-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9d98ad] transition-colors placeholder-slate-400"
                   ></textarea>
                 </div>
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-slate-800  text-white rounded-lg hover:bg-slate-900 transition-colors focus:outline-none focus:ring-2 focus:ring-[#9d98ad]"
+                    disabled={isSubmitting}
+                    className={`px-6 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#9d98ad] ${
+                      isSubmitting 
+                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
+                        : 'bg-slate-800 text-white hover:bg-slate-900'
+                    }`}
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </div>
               </form>
