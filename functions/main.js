@@ -5,8 +5,17 @@ const nodemailer = require('nodemailer');
 
 module.exports = async ({ req, res, log, error }) => {
   try {
-    // Parse the incoming data from database trigger
-    const payload = JSON.parse(req.payload || req.body || '{}');
+    // Handle the incoming data from database trigger
+    // req.body might already be an object, not a JSON string
+    let payload;
+    
+    if (typeof req.body === 'string') {
+      payload = JSON.parse(req.body);
+      log('📨 Parsed JSON string payload');
+    } else {
+      payload = req.body;
+      log('📨 Received object payload directly');
+    }
     
     log('📨 Received database trigger payload');
     log('Full payload:', JSON.stringify(payload, null, 2));
