@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import KilluaSkateBoarding from '../assets/KilluaSkateBoarding.gif';
 import hxhlogo from '../assets/hxhlogo.png';
-import { databases, functions, DATABASE_ID, COLLECTION_ID, EMAIL_FUNCTION_ID, ID } from '../lib/appwrite';
+import { databases, DATABASE_ID, COLLECTION_ID, ID } from '../lib/appwrite';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -35,7 +35,8 @@ function Contact() {
 
         try {
             // Create document in Appwrite database
-            const document = await databases.createDocument(
+            // The database trigger will automatically fire the email function
+            await databases.createDocument(
                 DATABASE_ID,
                 COLLECTION_ID,
                 ID.unique(),
@@ -47,30 +48,6 @@ function Contact() {
                     createdAt: new Date().toISOString()
                 }
             );
-
-            // Trigger Appwrite cloud function for email notification
-            try {
-                await functions.createExecution(
-                    EMAIL_FUNCTION_ID,
-                    JSON.stringify({
-                        name: formData.fullName.trim(),
-                        email: formData.email.trim(),
-                        subject: formData.subject.trim(),
-                        message: formData.message.trim(),
-                        documentId: document.$id
-                    })
-                );
-                console.log('Email notification sent successfully');
-            } catch (emailError) {
-                console.warn('Email notification failed:', emailError);
-                
-                // Log specific permission errors for debugging
-                if (emailError.message && emailError.message.includes('permissions')) {
-                    console.error('Function permissions not configured. Please add "Execute" permission for "Any" or "Guests" in Appwrite Console.');
-                }
-                
-                // Don't fail the whole process if email fails - message is still saved
-            }
 
             setSubmitStatus('success');
             setFormData({

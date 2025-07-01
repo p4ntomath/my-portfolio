@@ -1,15 +1,42 @@
 // Appwrite Cloud Function - main.js
-// This function sends email notifications when contact form is submitted
+// This function sends email notifications when contact form is submitted via database trigger
 
 const nodemailer = require('nodemailer');
 
 module.exports = async ({ req, res, log, error }) => {
   try {
-    // Parse the incoming data from your contact form
-    const data = JSON.parse(req.body || '{}');
-    const { name, email, subject, message, documentId } = data;
+    // Parse the incoming data from database trigger
+    const payload = JSON.parse(req.body || '{}');
+    
+    log('📨 Received database trigger payload');
+    log('Full payload:', JSON.stringify(payload, null, 2));
+
+    // Extract document data from database trigger payload
+    // Database triggers send data in payload.data (the new document)
+    let documentData;
+    
+    if (payload.data) {
+      // This is from a database trigger
+      documentData = payload.data;
+      log('📄 Processing document from database trigger');
+    } else {
+      // Fallback: manual function call (if still used)
+      documentData = payload;
+      log('📞 Processing manual function call');
+    }
+
+    // Extract contact form data from the document
+    const { 
+      name, 
+      email, 
+      subject, 
+      message, 
+      createdAt,
+      $id: documentId 
+    } = documentData;
 
     log(`📧 Processing email notification for: ${name} (${email})`);
+    log(`📝 Document ID: ${documentId}`);
 
     // Debug: Log all environment variables (without sensitive values)
     log('🔍 Environment check:');
@@ -20,13 +47,19 @@ module.exports = async ({ req, res, log, error }) => {
 
     // Validate required data
     if (!name || !email || !subject || !message) {
-      throw new Error('Missing required fields');
+      const missingFields = [];
+      if (!name) missingFields.push('name');
+      if (!email) missingFields.push('email');
+      if (!subject) missingFields.push('subject');
+      if (!message) missingFields.push('message');
+      
+      throw new Error(`Missing required fields: ${missingFields.join(', ')}`);
     }
 
     // Send email using Nodemailer
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS && process.env.ADMIN_EMAIL) {
       log('📤 Attempting to send email...');
-      await sendEmailWithNodemailer(subject, name, email, message, documentId);
+      await sendEmailWithNodemailer(subject, name, email, message, documentId || 'unknown');
       log('✅ Email sent successfully via Nodemailer');
     } else {
       log('⚠️ No email service configured. Required env vars: SMTP_HOST, SMTP_USER, SMTP_PASS, ADMIN_EMAIL');
@@ -40,6 +73,7 @@ module.exports = async ({ req, res, log, error }) => {
         name,
         email,
         subject,
+        documentId,
         timestamp: new Date().toISOString()
       }
     });
