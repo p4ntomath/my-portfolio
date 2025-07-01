@@ -91,8 +91,8 @@ module.exports = async ({ req, res, log, error }) => {
 
 // Nodemailer email function
 async function sendEmailWithNodemailer(subject, senderName, senderEmail, message, documentId) {
-  // Create transporter
-  const transporter = nodemailer.createTransporter({
+  // Create transporter (fixed method name)
+  const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT || '587'),
     secure: process.env.SMTP_SECURE === 'true',
