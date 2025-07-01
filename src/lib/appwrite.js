@@ -14,6 +14,6 @@ export const DATABASE_ID = '6864054600164bc45748'; // Replace with the ID from c
 export const COLLECTION_ID = '6864055d002e561ce093'; // Replace with the ID from console
 
 // Replace with your actual Function ID from Appwrite console (not deployment ID)
-export const EMAIL_FUNCTION_ID = '6864135c2e27f125c178'; // This should be the Function ID, not deployment ID
+export const EMAIL_FUNCTION_ID = '686413590029a1917e5c'; // This should be the Function ID, not deployment ID
 
 export { ID };
