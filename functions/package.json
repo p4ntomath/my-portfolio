@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-email-function",
+  "version": "1.0.0",
+  "description": "Appwrite cloud function for portfolio contact form email notifications",
+  "main": "main.js",
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  },
+  "scripts": {
+    "start": "node main.js"
+  }
+}
