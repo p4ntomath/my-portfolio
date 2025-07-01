@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 module.exports = async ({ req, res, log, error }) => {
   try {
     // Parse the incoming data from database trigger
-    const payload = JSON.parse(req.payload || '{}');
+    const payload = JSON.parse(req.payload || req.body || '{}');
     
     log('📨 Received database trigger payload');
     log('Full payload:', JSON.stringify(payload, null, 2));
