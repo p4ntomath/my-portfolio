@@ -39,7 +39,7 @@ export default function Experience() {
       </div>
 
       {/* Responsive container with proper padding for different screen sizes */}
-      <div className="w-full mt-16 overflow-visible">
+      <div className="w-full mt-1 overflow-visible">
         <div 
           ref={scrollContainerRef}
           className="flex gap-4 md:gap-6 lg:gap-8 py-8 md:py-12 overflow-x-auto lg:justify-center overflow-y-visible snap-x snap-mandatory pl-4 md:pl-8 lg:pl-16 pr-4 md:pr-8 lg:pr-16" 
