@@ -3,6 +3,7 @@ import Landing from './pages/Landing';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Exprience from './pages/Exprience';
+import Contact from './pages/Contact';
 import React from 'react';
 import './App.css';
 
@@ -28,7 +29,7 @@ function App() {
         </section>
 
         <section id="contact" className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-b from-[var(--fourth)]/25 via-[var(--fourth)]/30 to-white/95 transition-all duration-1000 ease-in-out">
-          <h1 className="text-4xl font-bold">Contact</h1>
+          <Contact />
         </section>
       </main>
     </>
