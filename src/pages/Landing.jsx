@@ -76,7 +76,7 @@ function Landing() {
   }, [isVisible]);
 
   return (
-    <div ref={landingRef} className="min-h-[100dvh] w-full flex items-center justify-center py-16 md:py-0 overflow-hidden">
+    <div ref={landingRef} className="min-h-[100dvh] w-full flex items-center justify-center py-10 md:py-0 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-8">
         {/* Content Section */}
         <div className="w-full lg:w-1/3 text-center lg:text-left order-2 lg:order-1">

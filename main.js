@@ -1,15 +1,22 @@
 // Appwrite Cloud Function - main.js
 // This function sends email notifications when contact form is submitted
 
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
-export default async ({ req, res, log, error }) => {
+module.exports = async ({ req, res, log, error }) => {
   try {
     // Parse the incoming data from your contact form
     const data = JSON.parse(req.body || '{}');
     const { name, email, subject, message, documentId } = data;
 
     log(`📧 Processing email notification for: ${name} (${email})`);
+
+    // Debug: Log all environment variables (without sensitive values)
+    log('🔍 Environment check:');
+    log(`SMTP_HOST: ${process.env.SMTP_HOST ? 'SET' : 'MISSING'}`);
+    log(`SMTP_USER: ${process.env.SMTP_USER ? 'SET' : 'MISSING'}`);
+    log(`SMTP_PASS: ${process.env.SMTP_PASS ? 'SET' : 'MISSING'}`);
+    log(`ADMIN_EMAIL: ${process.env.ADMIN_EMAIL ? 'SET' : 'MISSING'}`);
 
     // Validate required data
     if (!name || !email || !subject || !message) {
@@ -18,6 +25,7 @@ export default async ({ req, res, log, error }) => {
 
     // Send email using Nodemailer
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS && process.env.ADMIN_EMAIL) {
+      log('📤 Attempting to send email...');
       await sendEmailWithNodemailer(subject, name, email, message, documentId);
       log('✅ Email sent successfully via Nodemailer');
     } else {
@@ -38,6 +46,7 @@ export default async ({ req, res, log, error }) => {
 
   } catch (err) {
     error('❌ Error in email notification function:', err.message);
+    error('❌ Full error details:', err);
     
     return res.json({
       success: false,
@@ -49,10 +58,10 @@ export default async ({ req, res, log, error }) => {
 // Nodemailer email function
 async function sendEmailWithNodemailer(subject, senderName, senderEmail, message, documentId) {
   // Create transporter
-  const transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransporter({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
