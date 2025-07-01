@@ -29,7 +29,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center py-8 relative">
+    <div className="w-full flex flex-col justify-center items-center py-3 relative">
       {/* Top instruction - positioned to be visible above the cards */}
       <div className="absolute top-[25px] left-1/2 transform -translate-x-1/2 z-20">
         <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-lg border border-gray-200">
