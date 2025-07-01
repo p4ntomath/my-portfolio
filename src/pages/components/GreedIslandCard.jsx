@@ -23,8 +23,8 @@ export default function GreedIslandCard({
               }}
               onContextMenu={(e) => e.preventDefault()}
               onDragStart={(e) => e.preventDefault()}
-              onSelectStart={(e) => e.preventDefault()}
-              >
+
+>
               <div aria-label="job-id" className="absolute top-[16px] left-[20px] h-8 w-14 bg-[#DFDBC1] flex items-center justify-center">
                   <p className=" font-japanese text-lg">{id}</p>
               </div>

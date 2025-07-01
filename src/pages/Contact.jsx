@@ -60,9 +60,16 @@ function Contact() {
                         documentId: document.$id
                     })
                 );
+                console.log('Email notification sent successfully');
             } catch (emailError) {
                 console.warn('Email notification failed:', emailError);
-                // Don't fail the whole process if email fails
+                
+                // Log specific permission errors for debugging
+                if (emailError.message && emailError.message.includes('permissions')) {
+                    console.error('Function permissions not configured. Please add "Execute" permission for "Any" or "Guests" in Appwrite Console.');
+                }
+                
+                // Don't fail the whole process if email fails - message is still saved
             }
 
             setSubmitStatus('success');
@@ -100,7 +107,7 @@ function Contact() {
           </div>
           
           {/* Contact Form */}
-          <div className="p-3 w-screen lg:w-1/2 flex items-center">
+          <div className="p-3 w-screen lg:w-1/2 flex justify-center">
             <div className="bg-[#70668c] rounded-2xl p-6 shadow-2xl border-l-4 border-t border-r border-b border-slate-200 w-xl">
               <h2 className="text-xl font-bold text-white mb-4 text-center">Contact Me</h2>
               
