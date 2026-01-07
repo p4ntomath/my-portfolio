@@ -15,7 +15,7 @@ function Book() {
     },
     {
       id: "2",
-      name: "MyCoverLetter.tech",
+      name: "mycoverletter",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "AI API"],
       description: "An innovative web application that leverages artificial intelligence to help job seekers create compelling, personalized cover letters. Users input their details and job descriptions, and the AI generates professional, tailored cover letters that highlight relevant skills and experiences for specific positions.",
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=250&fit=crop&crop=faces",

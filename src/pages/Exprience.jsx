@@ -55,7 +55,7 @@ export default function Experience() {
               rank="SS-01"
               id="01"
               image={deliverycardimage}
-              desc="Completed full-stack web projects for clients, from requirements gathering to deployment, adapting technical and business requirements. Provided consulting on technology stack selection and application architecture, helping startups and individuals make informed technical decisions."
+              desc="Completed full-stack web projects for clients, from requirements gathering to deployment, adapting technical and business requirements."
             />
           </div>
           <div className="flex-shrink-0 snap-center">
@@ -64,7 +64,7 @@ export default function Experience() {
               rank="A-02"
               id="02"
               image={studycardimage}
-              desc="Applied mathematics and computer science to undergraduate mathematics concepts. Utilized computational libraries (NumPy, SciPy, Matplotlib) to illustrate mathematical solutions and computational thinking skills to improve academic performance."
+              desc="Applied mathematics and computer science to undergraduate mathematics concepts. Utilized computational libraries (NumPy, SciPy, Matplotlib) "
             />
           </div>
           <div className="flex-shrink-0 snap-center">
@@ -73,7 +73,7 @@ export default function Experience() {
               rank="S-03"
               id="03"
               image={telecardimage}
-              desc="Delivered interactive coding workshops and peer mentoring sessions focused on Python, C++, data structures, and computational problem-solving. Supported open source club projects and guided coding interview preparation, promoting hands-on, practical learning."
+              desc="Delivered interactive coding workshops and peer mentoring sessions focused on Python, C++, data structures, and computational problem-solving."
             />
           </div>
         </div>

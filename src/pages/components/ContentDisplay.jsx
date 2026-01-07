@@ -20,7 +20,7 @@ export function ContentDisplay({ selectedOption }) {
         <div className="space-y-4">
           <p className="text-lg">
             Hello! I&apos;m Mahlatse Rabothata, a passionate Computer Science & Applied Mathematics Graduate from Alexandra, Johannesburg, South Africa.
-            I completed my BSc degree at the University of the Witwatersrand in December 2025 (Feb 2022 - Dec 2025).
+            I completed my BSc degree at the University of the Witwatersrand in December 2025 (Jan 2023 - Dec 2025).
           </p>
           <p className="text-base">
             I specialize in software engineering, data analysis, and systems modeling. With experience in full-stack development, 
