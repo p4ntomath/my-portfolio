@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faTrophy, faCode, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faTrophy, faCode, faHeart, faUser, faLaptopCode, faAtom, faMusic, faGamepad, faCloud } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 export function ContentDisplay({ selectedOption }) {
@@ -14,20 +14,20 @@ export function ContentDisplay({ selectedOption }) {
 
   const content = {
     "Who I Am": {
-      icon: "👋",
+      icon: <FontAwesomeIcon icon={faUser} className="text-[var(--secondary)]" />,
       title: "Who Am I",
       content: (
         <div className="space-y-4">
           <p className="text-lg">
             Hello! I&apos;m Mahlatse Rabothata, a passionate Computer Science & Applied Mathematics Graduate from Alexandra, Johannesburg, South Africa.
-            I recently completed my BSc degree at the University of the Witwatersrand (Feb 2022 - Nov 2024).
+            I completed my BSc degree at the University of the Witwatersrand in December 2025 (Feb 2022 - Dec 2025).
           </p>
           <p className="text-base">
             I specialize in software engineering, data analysis, and systems modeling. With experience in full-stack development, 
             academic tutoring, and coding instruction, I enjoy creating solutions that bridge technology and real-world problems.
           </p>
           <p className="text-sm text-gray-600">
-            Graduate (Nov 2024) | Freelance Developer | Academic & Coding Tutor
+            Graduate (Dec 2025) | Freelance Developer | Academic & Coding Tutor
           </p>
         </div>
       )
@@ -40,7 +40,7 @@ export function ContentDisplay({ selectedOption }) {
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Bachelor of Science (BSc)</h3>
             <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
-            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Feb 2022 - Nov 2024</p>
+            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Feb 2022 - Dec 2025</p>
             <p className="text-sm text-gray-600">Graduate - Software Engineering, Data Analysis, and Systems Modeling</p>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
@@ -69,15 +69,24 @@ export function ContentDisplay({ selectedOption }) {
       content: (
         <div className="space-y-4">
           <div className="achievement-card p-4 bg-white/80 rounded-lg shadow-md">
-            <h3 className="font-bold text-[var(--secondary)]">🏆 Certificate Of Merit</h3>
+            <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+              <FontAwesomeIcon icon={faTrophy} className="text-yellow-500" />
+              Certificate Of Merit
+            </h3>
             <p className="text-sm">Mobile Computing II</p>
           </div>
           <div className="achievement-card p-4 bg-white/80 rounded-lg shadow-md">
-            <h3 className="font-bold text-[var(--secondary)]">🌟 Top Achiever 2023</h3>
+            <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+              <FontAwesomeIcon icon={faTrophy} className="text-yellow-400" />
+              Top Achiever 2023
+            </h3>
             <p className="text-sm">Knockando Hall Of Residence</p>
           </div>
           <div className="achievement-card p-4 bg-white/80 rounded-lg shadow-md">
-            <h3 className="font-bold text-[var(--secondary)]">🔑 Golden Key Honor</h3>
+            <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+              <FontAwesomeIcon icon={faTrophy} className="text-yellow-600" />
+              Golden Key Honor
+            </h3>
             <p className="text-sm">Academic Excellence Recognition</p>
           </div>
         </div>
@@ -92,7 +101,8 @@ export function ContentDisplay({ selectedOption }) {
             {/* Programming Languages */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                💻 Programming Languages
+                <FontAwesomeIcon icon={faLaptopCode} />
+                Programming Languages
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
@@ -131,7 +141,8 @@ export function ContentDisplay({ selectedOption }) {
             {/* Web & Mobile Development */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                🌐 Web & Mobile Development
+                <FontAwesomeIcon icon={faCode} />
+                Web & Mobile Development
               </h3>
               <div className="space-y-1">
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React.js</span>
@@ -146,7 +157,8 @@ export function ContentDisplay({ selectedOption }) {
             {/* Cloud & Database */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                ☁️ Cloud & Database
+                <FontAwesomeIcon icon={faCloud} />
+                Cloud & Database
               </h3>
               <div className="space-y-1">
                 <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Firebase</span>
@@ -160,7 +172,8 @@ export function ContentDisplay({ selectedOption }) {
             {/* Scientific Computing & Tools */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                🔬 Scientific Computing & Tools
+                <FontAwesomeIcon icon={faAtom} />
+                Scientific Computing & Tools
               </h3>
               <div className="space-y-1">
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NumPy</span>
@@ -181,19 +194,31 @@ export function ContentDisplay({ selectedOption }) {
       content: (
         <div className="grid grid-cols-2 gap-4">
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">💻 Programming</h3>
+            <h3 className="font-bold flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faLaptopCode} className="text-[var(--secondary)]" />
+              Programming
+            </h3>
             <p className="text-sm">Software Development & Problem Solving</p>
           </div>
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">🔬 Computational Physics</h3>
+            <h3 className="font-bold flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faAtom} className="text-[var(--secondary)]" />
+              Computational Physics
+            </h3>
             <p className="text-sm">Simulations & Mathematical Modeling</p>
           </div>
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">🌸 Anime</h3>
+            <h3 className="font-bold flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faGamepad} className="text-[var(--secondary)]" />
+              Anime
+            </h3>
             <p className="text-sm">Japanese Animation & Culture</p>
           </div>
           <div className="interest-card p-4 bg-white/80 rounded-lg shadow-md text-center">
-            <h3 className="font-bold">🎵 Music Production</h3>
+            <h3 className="font-bold flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faMusic} className="text-[var(--secondary)]" />
+              Music Production
+            </h3>
             <p className="text-sm">Beat Making & Audio Engineering</p>
           </div>
         </div>

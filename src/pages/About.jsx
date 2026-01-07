@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { useState} from "react";
 import { Phone } from "./components/Phone.jsx";
 import { ContentDisplay } from "./components/ContentDisplay.jsx";
 
