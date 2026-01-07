@@ -4,7 +4,6 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Exprience from './pages/Exprience';
 import Contact from './pages/Contact';
-import React from 'react';
 import './App.css';
 
 function App() {

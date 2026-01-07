@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import "./styles/landing.css";
 import HunterLicenseCard from "./components/HunterLicenseCard";
 import githubIcon from "../assets/github-icon.png";
@@ -7,20 +7,19 @@ import emailIcon from "../assets/email-icon.jpg";
 import whatsappIcon from "../assets/whatsapp-icon.png";
 import phoneIcon from "../assets/phone-icon.png";
 
-
 function Landing() {
   const [positions, setPositions] = useState([]);
   const [isVisible, setIsVisible] = useState(true);
   const landingRef = useRef(null);
   const animationRef = useRef(null);
 
-  const socialLinks = [
+  const socialLinks = useMemo(() => [
     { href: "https://github.com/p4ntomath", icon: githubIcon, alt: "GitHub" },
     { href: "https://www.linkedin.com/in/mahlatse-rabothata-14641a287/", icon: linkedinIcon, alt: "LinkedIn" },
     { href: "mailto:morwawarabothata5@gmail.com", icon: emailIcon, alt: "Email" },
     { href: "https://wa.me/0630311427", icon: whatsappIcon, alt: "WhatsApp" },
     { href: "tel:+27630311427", icon: phoneIcon, alt: "Phone" }
-  ];
+  ], []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,12 +27,13 @@ function Landing() {
       { threshold: 0.1 }
     );
 
-    if (landingRef.current) {
-      observer.observe(landingRef.current);
+    const currentRef = landingRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (landingRef.current) observer.unobserve(landingRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, []);
 
@@ -41,7 +41,7 @@ function Landing() {
     if (!isVisible) return;
 
     const generatePositions = () => {
-      const newPositions = socialLinks.map((_, index) => {
+      const newPositions = socialLinks.map(() => {
         // Base positions that look good visually - increased spread for desktop
         const baseX = window.innerWidth < 768 ? 50 : 50; // Center the base position
         const spreadX = window.innerWidth < 768 ? 40 : 60; // Increased spread from 20 to 60
@@ -73,7 +73,7 @@ function Landing() {
         clearInterval(animationRef.current);
       }
     };
-  }, [isVisible]);
+  }, [isVisible, socialLinks]);
 
   return (
     <div ref={landingRef} className="min-h-[100dvh] w-full flex items-center justify-center py-10 md:py-0 overflow-hidden">

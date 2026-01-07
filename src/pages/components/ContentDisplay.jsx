@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap, faTrophy, faCode, faHeart } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 export function ContentDisplay({ selectedOption }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,13 +19,15 @@ export function ContentDisplay({ selectedOption }) {
       content: (
         <div className="space-y-4">
           <p className="text-lg">
-            Hello! I'm Mahlatse Rabothata, a passionate developer from Ga-Modjadji, Limpopo.
-            My journey in tech started with a fascination for physics and quantum computing,
-            which eventually led me to discover my love for software development.
+            Hello! I&apos;m Mahlatse Rabothata, a passionate Computer Science & Applied Mathematics Graduate from Alexandra, Johannesburg, South Africa.
+            I recently completed my BSc degree at the University of the Witwatersrand (Feb 2022 - Nov 2024).
           </p>
           <p className="text-base">
-            I believe in creating meaningful solutions that make a difference,
-            combining my background in physics with modern software engineering practices.
+            I specialize in software engineering, data analysis, and systems modeling. With experience in full-stack development, 
+            academic tutoring, and coding instruction, I enjoy creating solutions that bridge technology and real-world problems.
+          </p>
+          <p className="text-sm text-gray-600">
+            Graduate (Nov 2024) | Freelance Developer | Academic & Coding Tutor
           </p>
         </div>
       )
@@ -37,16 +40,24 @@ export function ContentDisplay({ selectedOption }) {
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Bachelor of Science (BSc)</h3>
             <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
-            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Expected Graduation: 2026</p>
+            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Feb 2022 - Nov 2024</p>
+            <p className="text-sm text-gray-600">Graduate - Software Engineering, Data Analysis, and Systems Modeling</p>
+          </div>
+          <div className="border-l-4 border-[var(--secondary)] pl-4">
+            <h3 className="font-bold">Academic Achievements</h3>
+            <ul className="list-disc list-inside text-sm">
+              <li>Golden Key Honor Society Member</li>
+              <li>Certificate of Merit - Mobile Computing II</li>
+              <li>Top Achiever 2023 - Knockando Hall of Residence</li>
+            </ul>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Relevant Coursework</h3>
             <ul className="list-disc list-inside text-sm">
-              <li>Software Design</li>
-              <li>Mobile Computing</li>
-              <li>Scientific Computing</li>
+              <li>Software Design & Mobile Computing</li>
               <li>Data Structures and Analysis of Algorithms</li>
-              <li>Mechanics & Mathematical Modelling</li>
+              <li>Scientific Computing & Mathematical Modelling</li>
+              <li>Mechanics & Applied Mathematics</li>
             </ul>
           </div>
         </div>
@@ -85,25 +96,25 @@ export function ContentDisplay({ selectedOption }) {
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">JavaScript</span>
-                  <div className="w-20 h-2 bg-gray-200 rounded-full">
-                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '90%'}}></div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
                   <span className="text-sm">Python</span>
                   <div className="w-20 h-2 bg-gray-200 rounded-full">
                     <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '95%'}}></div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">C++</span>
+                  <span className="text-sm">JavaScript</span>
                   <div className="w-20 h-2 bg-gray-200 rounded-full">
-                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '50%'}}></div>
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '90%'}}></div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm">Java</span>
+                  <div className="w-20 h-2 bg-gray-200 rounded-full">
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '85%'}}></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm">C++</span>
                   <div className="w-20 h-2 bg-gray-200 rounded-full">
                     <div className="h-full bg-[var(--secondary)] rounded-full" style={{width: '75%'}}></div>
                   </div>
@@ -117,52 +128,50 @@ export function ContentDisplay({ selectedOption }) {
               </div>
             </div>
 
-            {/* Web Development */}
+            {/* Web & Mobile Development */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                🌐Development
+                🌐 Web & Mobile Development
               </h3>
               <div className="space-y-1">
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React.js</span>
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">Flutter</span>
-                <span className="inline-block bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded ml-1">Tailwind CSS</span>
-                <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-1">Cloud Services</span>
-                <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded ml-1">BaaS</span>
                 <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Django</span>
                 <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">Express.js</span>
-                <span className="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded ml-1">UI/UX</span>
-                <span className="inline-block bg-blue-100 text-gray-800 text-xs px-2 py-1 rounded ml-1">SQL / NoSQL</span>
+                <span className="inline-block bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded ml-1">Tailwind CSS</span>
+                <span className="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded ml-1">Android Studio</span>
               </div>
             </div>
 
-            {/* Tools & Platforms */}
+            {/* Cloud & Database */}
             <div className="space-y-3">
               <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                🛠️ Tools & Platforms
+                ☁️ Cloud & Database
               </h3>
               <div className="space-y-1">
+                <span className="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Firebase</span>
+                <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">AWS</span>
+                <span className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Appwrite</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MySQL</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">NoSQL</span>
+              </div>
+            </div>
+
+            {/* Scientific Computing & Tools */}
+            <div className="space-y-3">
+              <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
+                🔬 Scientific Computing & Tools
+              </h3>
+              <div className="space-y-1">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NumPy</span>
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">SciPy</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">SymPy</span>
+                <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MATLAB</span>
                 <span className="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Git & GitHub</span>
-                <span className="inline-block bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded ml-1">Figma</span>
-                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">VS Code</span>
-              </div>
-            </div>
-
-            {/* Mathematics & Scientific Computing */}
-            <div className="space-y-3">
-              <h3 className="font-bold text-[var(--secondary)] flex items-center gap-2">
-                🔬 Mathematics & Scientific Computing
-              </h3>
-              <div className="space-y-1">
-                <div className="space-y-1">
-                  <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MATLAB</span>
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">SciPy</span>
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-1">NumPy</span>
-                  <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded ml-1">SymPy</span>
-                </div>
+                <span className="inline-block bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded">Figma</span>
               </div>
             </div>
           </div>
-
         </div>
       )
     },
@@ -211,3 +220,7 @@ export function ContentDisplay({ selectedOption }) {
     </div>
   );
 }
+
+ContentDisplay.propTypes = {
+  selectedOption: PropTypes.string.isRequired,
+};

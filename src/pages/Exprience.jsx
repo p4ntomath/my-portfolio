@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import GreedIslandCard from './components/GreedIslandCard';
 import telecardimage from '../assets/telecardimage.jpg';
 import studycardimage from '../assets/studycardimage.jpg';
@@ -51,29 +51,29 @@ export default function Experience() {
         >
           <div className="flex-shrink-0 snap-center">
             <GreedIslandCard 
-              jobTitle="Coding Tutor"
-              rank="A-01"
+              jobTitle="Freelance Full-Stack Developer"
+              rank="SS-01"
               id="01"
-              image={telecardimage}
-              desc="Providing peer-to-peer technical guidance and mentorship across Python, C++, data structures, and web development.from beginner to advanced levels"
+              image={deliverycardimage}
+              desc="Completed full-stack web projects for clients, from requirements gathering to deployment, adapting technical and business requirements. Provided consulting on technology stack selection and application architecture, helping startups and individuals make informed technical decisions."
             />
           </div>
           <div className="flex-shrink-0 snap-center">
             <GreedIslandCard 
               jobTitle="Academic Tutor"
-              rank="S-02"
+              rank="A-02"
               id="02"
               image={studycardimage}
-              desc="Tutoring Scientific Computing using Python to solve mathematical problems like optimization and root finding,integrating with libraries like NumPy and SciPy"
+              desc="Applied mathematics and computer science to undergraduate mathematics concepts. Utilized computational libraries (NumPy, SciPy, Matplotlib) to illustrate mathematical solutions and computational thinking skills to improve academic performance."
             />
           </div>
           <div className="flex-shrink-0 snap-center">
             <GreedIslandCard 
-              jobTitle="Full-Stack Developer"
-              rank="SS-03"
+              jobTitle="Coding Tutor"
+              rank="S-03"
               id="03"
-              image={deliverycardimage}
-              desc="Freelance developer providing end-to-end solutions for startups and clients,technical consulting on software architecture and design and building scalable web/mobile applications"
+              image={telecardimage}
+              desc="Delivered interactive coding workshops and peer mentoring sessions focused on Python, C++, data structures, and computational problem-solving. Supported open source club projects and guided coding interview preparation, promoting hands-on, practical learning."
             />
           </div>
         </div>
