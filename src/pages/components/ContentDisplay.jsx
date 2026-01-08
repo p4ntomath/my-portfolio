@@ -40,16 +40,8 @@ export function ContentDisplay({ selectedOption }) {
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Bachelor of Science (BSc)</h3>
             <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
-            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Feb 2022 - Dec 2025</p>
+            <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Feb 2023 - Dec 2025</p>
             <p className="text-sm text-gray-600">Graduate - Software Engineering, Data Analysis, and Systems Modeling</p>
-          </div>
-          <div className="border-l-4 border-[var(--secondary)] pl-4">
-            <h3 className="font-bold">Academic Achievements</h3>
-            <ul className="list-disc list-inside text-sm">
-              <li>Golden Key Honor Society Member</li>
-              <li>Certificate of Merit - Mobile Computing II</li>
-              <li>Top Achiever 2023 - Knockando Hall of Residence</li>
-            </ul>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Relevant Coursework</h3>
