@@ -9,7 +9,6 @@ client
 export const databases = new Databases(client);
 
 
-export const DATABASE_ID = '6864054600164bc45748'; // Replace with the ID from console
-export const COLLECTION_ID = '6864055d002e561ce093'; // Replace with the ID from console
-
+export const DATABASE_ID = '6864054600164bc45748'; 
+export const COLLECTION_ID = '6864055d002e561ce093';
 export { ID };

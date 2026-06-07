@@ -23,11 +23,8 @@ export function ContentDisplay({ selectedOption }) {
             I completed my BSc degree at the University of the Witwatersrand in December 2025 (Jan 2023 - Dec 2025).
           </p>
           <p className="text-base">
-            I specialize in software engineering, data analysis, and systems modeling. With experience in full-stack development, 
-            academic tutoring, and coding instruction, I enjoy creating solutions that bridge technology and real-world problems.
-          </p>
-          <p className="text-sm text-gray-600">
-            Graduate (Dec 2025) | Freelance Developer | Academic & Coding Tutor
+            I specialize in software engineering, data analysis, and systems modeling. With experience in full-stack development and
+            academic tutoring, I enjoy creating solutions that bridge technology and real-world problems.
           </p>
         </div>
       )
@@ -41,7 +38,6 @@ export function ContentDisplay({ selectedOption }) {
             <h3 className="font-bold">Bachelor of Science (BSc)</h3>
             <p className="text-sm text-gray-600">Major: Computer Science & Applied Mathematics</p>
             <p className="text-sm text-gray-600">University of the Witwatersrand (Wits) | Feb 2023 - Dec 2025</p>
-            <p className="text-sm text-gray-600">Graduate - Software Engineering, Data Analysis, and Systems Modeling</p>
           </div>
           <div className="border-l-4 border-[var(--secondary)] pl-4">
             <h3 className="font-bold">Relevant Coursework</h3>

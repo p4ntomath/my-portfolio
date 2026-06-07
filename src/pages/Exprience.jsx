@@ -33,7 +33,7 @@ export default function Experience() {
       {/* Top instruction - positioned to be visible above the cards */}
       <div className="absolute top-[25px] left-1/2 transform -translate-x-1/2 z-20">
         <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-lg border border-gray-200">
-          <p className="text-xs font-medium text-gray-700 text-center whitespace-nowrap">💼 My Experience</p>
+          <p className="text-xs font-medium text-gray-700 text-center whitespace-nowrap"> My Experience</p>
           <p className="text-xs text-gray-600 text-center mt-1">Discover my professional journey and expertise</p>
         </div>
       </div>

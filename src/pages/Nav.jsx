@@ -33,8 +33,8 @@ function Nav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2 group">
-            <img src={myLogo} className="h-8 w-auto transition-transform duration-300 group-hover:scale-110" alt="P4ntomath" />
-            <span className="text-xl font-bold bg-gradient-to-r from-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent">
+            <img src={myLogo} className="h-8 w-auto transition-transform duration-300 group-hover:scale-110" alt="Logo" />
+            <span className="text-xl font-bold bg-[var(--secondary)] bg-clip-text text-transparent">
               P4ntomath
             </span>
           </a>

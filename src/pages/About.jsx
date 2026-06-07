@@ -27,7 +27,7 @@ function About() {
         {/* Interactive hint - Hidden on mobile */}
         <div className="hidden sm:block absolute top-8 left-1/2 transform -translate-x-1/2 text-center text-gray-600">
           <div className="bg-white/80 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
-            <p className="text-sm">Use the directional pad to navigate</p>
+            <p className="text-sm">Use the directional pad on phone to navigate</p>
             <p className="text-xs mt-1">↑↓ to move between options</p>
           </div>
         </div>

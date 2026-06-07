@@ -80,7 +80,7 @@ function Landing() {
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-8">
         {/* Content Section */}
         <div className="w-full lg:w-1/3 text-center lg:text-left order-2 lg:order-1">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-[var(--secondary)] bg-clip-text text-transparent">
             Welcome To My Portfolio
           </h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-md mx-auto lg:mx-0">

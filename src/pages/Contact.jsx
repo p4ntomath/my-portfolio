@@ -69,7 +69,7 @@ function Contact() {
         {/* Top instruction */}
         <div className="p-2 ">
           <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-lg border border-gray-200">
-            <p className="text-xs font-medium text-gray-700 text-center whitespace-nowrap">💬 Get In Touch</p>
+            <p className="text-xs font-medium text-gray-700 text-center whitespace-nowrap">Get In Touch</p>
             <p className="text-xs text-gray-600 text-center mt-1">Send me a message and let's connect!</p>
           </div>
         </div>
@@ -97,7 +97,7 @@ function Contact() {
               
               {submitStatus === 'error' && (
                 <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                  Failed to send message. Please try again or contact me directly.
+                  Failed to send message. Please try again or contact me on my socials.
                 </div>
               )}
               
@@ -182,7 +182,7 @@ function Contact() {
                 alt="HxH Logo"
                 className="h-10 w-auto"
               />
-              <p className="text-gray-600 font-japanese font-bold">All rights reserved © Copyright</p>
+              <p className="text-gray-600 text-sm font-sans font-bold">All rights reserved © Copyright</p>
             </div>
           </div>
         </footer>
